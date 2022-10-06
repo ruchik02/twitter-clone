@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+ body {
   font-family: 'Lato', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
@@ -10,14 +10,8 @@ body {
 }
   
   .image {
-    height: 100%;
     background: url('https://github.com/lightcodecamp/twitter-page-clone/blob/main/img/cover-img.png?raw=true');
-    background-position:center ;
-    background-repeat: no-repeat;
-    background-size: cover;
     flex: 0 1 53vw;
-    position: relative;
-    background-attachment: fixed;
   }
   
   .content {
@@ -25,16 +19,9 @@ body {
   }
   
   .big-bird {
-    width: 16rem;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
   }
-  
-  .small-bird {
-   width: 3.5rem;
-   fill: #1da1f2;
-  }  
+    
   .btn-signup {
     transition: all .2s ease;
   }
@@ -117,5 +104,6 @@ body {
       font-size: 2rem;
     }
     
-  }
+  }  
+
 

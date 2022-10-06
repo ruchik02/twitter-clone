@@ -3,6 +3,7 @@ import React, {  useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { supabase } from '../utils/SupabaseClient';
+import Image from 'next/image';
 
 const SignIn = () => {
     const router = useRouter();
@@ -33,14 +34,16 @@ const SignIn = () => {
         <h1 className="text-xl font-bold text-center text-black font-sans">
           Sign in to your account
         </h1>
-            <i className="fab fa-twitter text-sky-500 text-2xl " ><img src="https://img.icons8.com/color/50/000000/twitter--v1.png"/></i>
+            <i className="fab fa-twitter text-sky-500 text-2xl " >
+            <Image src="/twitter.png" layout='fixed' width={60} height={60}></Image>
+            </i>
             <button className='flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans '>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzQejVR8oObnhHs228rCMMzglk3rruf9UMa7tT7qJQiw&s" width="25" className='m-2'/>
-                <span>Sign in with Google</span>
+            <Image src='/google.png' width={25} height={25} ></Image>
+                <span className='mx-2'>Sign in with Google</span>
             </button>
             <button className='flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans '>
-                <img src="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-index-content-uploads-10.png" width="25"  className='m-2'/>
-                <span>Sign in with Apple</span>
+            <Image src='/apple.png' width={20} height={20} ></Image>
+                <span className='mx-2'>Sign in with Apple</span>
             </button>
         </div>
         <h5>Or</h5>
@@ -66,9 +69,9 @@ const SignIn = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
                 
-            <button className="flex items-center w-72 h-10 bg-white outline-none justify-center font-sans rounded-full text-lg font-bold my-3 bg-[#1da1f2] text-white hover:bg-[#1f94dd]">Sign in with Email</button>
+            <button className="flex items-center w-72 h-10 bg-white outline-none justify-center font-sans rounded-full text-lg font-bold my-3 bg-sky-400 text-white hover:bg-sky-500">Sign in with Email</button>
             </form>
-            <button className='flex items-center w-72 h-10 bg-white outline-none font-bold justify-center font-sans text-lg rounded-full my-3 b-2 border-[#1da1f2] border-solid border text-[#1da1f2]'>Forget password?</button>
+            <button className='flex items-center w-72 h-10 bg-white outline-none font-bold justify-center font-sans text-lg rounded-full my-3 b-2 border-sky-400 border-solid border text-sky-500'>Forget password?</button>
         </div>
         <p className='text-black text-xl font-sans my-8'>Don't have an account ? <a href="/signup" className='hover:text-blue-400'>Sign Up</a></p>
     </div>
