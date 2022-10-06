@@ -3,6 +3,8 @@ import  { useState } from 'react';
 import { useRouter } from 'next/router';
 
 import { supabase } from '../utils/supabaseClient';
+ 
+import Image from 'next/image';
 
 const SignUp = () => {
   const router = useRouter();
@@ -25,6 +27,7 @@ const SignUp = () => {
   };
 
   return (
+
     
     <>
       <div className='flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap'>
@@ -33,14 +36,16 @@ const SignUp = () => {
         <h1 className="text-xl font-bold text-center text-black font-sans">
          Create your account
         </h1>
-            <i className="fab fa-twitter text-sky-500 text-2xl " ><img src="https://img.icons8.com/color/50/000000/twitter--v1.png"/></i>
+            <i className="fab fa-twitter text-sky-500 text-2xl " >
+            <Image src="/twitter.png" layout='fixed' width={60} height={60}></Image>
+            </i>
             <button className='flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans '>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzQejVR8oObnhHs228rCMMzglk3rruf9UMa7tT7qJQiw&s" width="25" className='m-2'/>
-                <span>Sign up with Google</span>
+            <Image src='/google.png' width={25} height={25} ></Image>
+                <span className='mx-2'>Sign up with Google</span>
             </button>
             <button className='flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans '>
-                <img src="https://www.freepnglogos.com/uploads/apple-logo-png/apple-logo-png-index-content-uploads-10.png" width="25"  className='m-2'/>
-                <span>Sign up with Apple</span>
+            <Image src='/apple.png' width={20} height={20} ></Image>
+                <span className='mx-2'>Sign up with Apple</span>
             </button>
         </div>
         <h5>Or</h5>
@@ -66,11 +71,11 @@ const SignUp = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
                 
-            <button className="flex items-center w-72 h-10 bg-white outline-none justify-center font-sans rounded-full text-lg font-bold my-3 bg-[#1da1f2] text-white hover:bg-[#1f94dd]">Sign Up</button>
+            <button className="flex items-center w-72 h-10 bg-white outline-none justify-center font-sans rounded-full text-lg font-bold my-3 bg-sky-400 text-white hover:bg-sky-500">Sign Up</button>
             </form>
         </div>
             <p className='text-black text-xl font-sans'>Already have an account?</p>
-            <button className='flex items-center w-72 h-10 bg-white outline-none justify-center font-sans rounded-full text-lg font-bold my-3 bg-[#1da1f2] text-white hover:bg-[#1f94dd]'>
+            <button className='flex items-center w-72 h-10 bg-white outline-none justify-center font-sans rounded-full text-lg font-bold my-3 bg-sky-400 text-white hover:bg-sky-500'>
             <a href="/signin">Sign In</a>
             </button>
         
