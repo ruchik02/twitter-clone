@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: black;
+}
+  
+  .image {
+    height: 100%;
+    background: url('https://github.com/lightcodecamp/twitter-page-clone/blob/main/img/cover-img.png?raw=true');
+    background-position:center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 0 1 53vw;
+    position: relative;
+    background-attachment: fixed;
+  }
+  
+  .content {
+    flex: 0 0 47vw;
+  }
+  
+  .big-bird {
+    width: 16rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .small-bird {
+   width: 3.5rem;
+   fill: #1da1f2;
+  }  
+  .btn-signup {
+    transition: all .2s ease;
+  }
+      
+  .footer {
+    padding: 1rem 2%;
+  }
+  
+  .footer nav a,
+  .footer nav div {
+    font-size: 13px;
+    margin: .3rem .5rem;
+    border-bottom: 1px solid transparent;
+    transition: all .2s ease;
+  }
+  
+  .footer nav a:hover {
+    border-bottom: 1px solid #536471;
+  }
+  
+  @media(max-width: 1024px) {
+    .content {
+      order: -1;
+      /* max-width: 600px; */
+      height: 80vh;
+      margin: 0 auto;
+    }
+  
+    .image {
+      height: 50vh;
+      flex:  0 1 100vw;
+
+    }
+  
+    .button {
+      display: flex;
+    }
+  
+    .btn {
+      width: 15rem;
+      margin-right: 1rem;
+    }
+  
+    h1 {
+      font-size: 8vw;
+    }
+    h3{
+      font-size: 2rem;
+    }
+  }
+  
+  @media(max-width: 768px) {
+    .content {
+      padding: 2rem;
+      margin: 0;
+    }
+  
+    .button {
+      flex-direction: column;
+    }
+  
+    .btn {
+      width: 25rem;
+    }
+    h1 {
+      font-size: 10vw;
+    }
+  
+    h3 {
+      font-size: 1.7rem;
+    }
+  
+  } 
+  @media (max-width:640px) {
+    h1 {
+      font-size:2rem;
+    }
+  
+    h3 {
+      font-size: 2rem;
+    }
+    
+  }
+
