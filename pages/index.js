@@ -1,12 +1,11 @@
-
-import Nav from '../components/Nav';
+import Home from "../components/Home";
 
 const index = () => {
   return (
     <>
-      <Nav/>
+      <Home />
     </>
-  )
-}
+  );
+};
 
-export default index
+export default index;
