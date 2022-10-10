@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/SupabaseClient";
 import Sidebar from "../components/Sidebar";
+import Feed from "../components/Feed";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -41,7 +42,10 @@ const Dashboard = () => {
 
   return (
     <>
+    {/* sidebar  component */}
       <Sidebar />
+      {/* Feed component  */}
+      <Feed/>
     </>
   );
 };

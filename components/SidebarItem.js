@@ -1,7 +1,7 @@
 const SidebarItem = ({ text, Icon, active }) => {
   return (
-    <div className="hoverEffect flex items-center text-gray-700 justify-center xl:justify-start text-lg space-x-3">
-      <Icon className="text-white h-7" />
+    <div className="hoverEffect flex items-center text-white justify-center xl:justify-start text-lg space-x-3">
+      <Icon className="text-white h-6 w-6" />
       <span className={`${active && "font-bold"} hidden xl:inline`}>
         {text}
       </span>
