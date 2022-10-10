@@ -42,10 +42,13 @@ const Dashboard = () => {
 
   return (
     <>
+    <main className="flex min-h-screen max-w-7xl mx-auto">
+
     {/* sidebar  component */}
       <Sidebar />
       {/* Feed component  */}
       <Feed/>
+    </main>
     </>
   );
 };
