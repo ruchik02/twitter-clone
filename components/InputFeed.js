@@ -31,7 +31,12 @@ export const InputFeed = () => {
             <BiCalendar className="h-9 w-9 hover:rounded-full hover:bg-gray-600 p-2 text-sky-500" />
             <HiLocationMarker className="h-9 w-9 hover:rounded-full hover:bg-gray-600 p-2 text-sky-500" />
           </div>
-          <button className="bg-blue-400 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50" disabled>Tweet</button>
+          <button
+            className="bg-blue-400 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50"
+            disabled
+          >
+            Tweet
+          </button>
         </div>
       </div>
     </div>
