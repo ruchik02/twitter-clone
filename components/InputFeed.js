@@ -9,8 +9,10 @@ export const InputFeed = () => {
       <Image
         src={Img}
         alt="image not found "
+        height={50}
+        width={50}
         layout="fixed"
-        className="h-11 w-11 hover:brightness-95 rounded-full cursor-pointer "
+        className="hover:brightness-95 rounded-[50%] cursor-pointer "
       ></Image>
       <div className="w-full divide-y divide-gray-200">
         <div>
@@ -29,12 +31,7 @@ export const InputFeed = () => {
             <BiCalendar className="h-9 w-9 hover:rounded-full hover:bg-gray-600 p-2 text-sky-500" />
             <HiLocationMarker className="h-9 w-9 hover:rounded-full hover:bg-gray-600 p-2 text-sky-500" />
           </div>
-          <button
-            className="bg-blue-400 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50"
-            disabled
-          >
-            Tweet
-          </button>
+          <button className="bg-blue-400 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50" disabled>Tweet</button>
         </div>
       </div>
     </div>
