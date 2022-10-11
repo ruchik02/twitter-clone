@@ -11,7 +11,7 @@ export const Post = ({ post }) => {
         {/* right side */}
         <div className="flex-1">
           {/* header */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mx-3">
             <div className=" flex items-center space-x-1 whitespace-nowrap">
               {/* user info */}
               <h4 className="font-bold text-lg sm:text-md capitalize hover:underline">{post.name}</h4>
@@ -22,9 +22,9 @@ export const Post = ({ post }) => {
             <BiDotsHorizontal className="h-9 w-9 hoverEffect p-2 rounded-full  hover:text-sky-500"/>
           </div>
           {/* text */}
-          <p className="text-white text-lg sm:text-md mb-3">{post.text}</p>
+          <p className="text-white text-lg sm:text-md mb-3 mx-3 capitalize">{post.text}</p>
           {/* image */}
-          <Image src={post.img} layout="fixed" height={300} width={480} className="rounded-2xl  "  alt="image not found"></Image>
+          <Image src={post.img} layout="fixed" height={300} width={480} className="rounded-2xl mx-2"  alt="image not found"></Image>
           {/* icons */}
           <div className="flex justify-between items-center my-2 p-2">
             <BiComment className="h-10 w-10 hover:text-blue-600 hoverEffect"/>
