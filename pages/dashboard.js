@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { supabase } from "../utils/SupabaseClient";
 import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
+import { Widget } from "../components/Widget";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -47,6 +48,8 @@ const Dashboard = () => {
         <Sidebar />
         {/* Feed component  */}
         <Feed />
+        {/* widget component */}
+        <Widget/>
       </main>
     </>
   );

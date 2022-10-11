@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { BiComment, BiDotsHorizontal, BiHeart } from "react-icons/bi";
 import { AiOutlineRetweet } from "react-icons/ai";
-import { BsBoxArrowUp,BsTriangle } from "react-icons/bs";
+import { BsBoxArrowUp,BsTriangle,} from "react-icons/bs";
 export const Post = ({ post }) => {
   return (
     <>
-      <div className="flex cursor-pointer border-b border-gray-300 p-3">
+      <div className="flex cursor-pointer border-b border-gray-600 p-3">
         {/* user image */}
         <Image src={post.userImg} layout="fixed" height={50} width={50} className="rounded-[50%]"></Image>
         {/* right side */}
@@ -27,15 +27,13 @@ export const Post = ({ post }) => {
           <Image src={post.img} layout="fixed" height={300} width={480} className="rounded-2xl mx-2"  alt="image not found"></Image>
           {/* icons */}
           <div className="flex justify-between items-center my-2 p-2">
-            <BiComment className="h-10 w-10 hover:text-blue-600 hoverEffect"/>
-            <AiOutlineRetweet className="h-10 w-10 hoverEffect hover:text-green-400"/>
-            <BiHeart className="h-10 w-10 hoverEffect hover:text-pink-500"/>
-            <BsBoxArrowUp className="h-10 w-10 hoverEffect hover:text-blue-600"/>
-            <BsTriangle className="h-10 w-10 hoverEffect hover:text-blue-600"/>
-
+            <BiComment className=" hover:text-blue-600 hover:bg-gray-500 transition duration-500 ease-out h-8 w-8 hover:rounded-full p-2  "/>
+            <AiOutlineRetweet className=" hover:bg-gray-500 hover:rounded-full transition duration-500 ease-out  h-8 w-8  hover:text-green-400  p-2  "/>
+            <BiHeart className="hover:bg-gray-500 hover:rounded-full transition duration-500 ease-out  h-8 w-8  hover:text-pink-500  p-2 "/>
+            <BsBoxArrowUp className=" hover:bg-gray-500 hover:rounded-full transition duration-500 ease-out  h-8 w-8  hover:text-blue-600   p-2"/>
+            <BsTriangle className=" hover:bg-gray-500 hover:rounded-full transition duration-500 ease-out  h-8 w-8  hover:text-blue-600  p-2"/>
           </div>
-
-        </div>
+        </div> 
       </div>
     </>
   );

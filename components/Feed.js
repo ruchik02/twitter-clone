@@ -1,6 +1,7 @@
 import { HiOutlineSparkles } from "react-icons/hi";
 import { InputFeed } from "./InputFeed";
 import { Post } from "./Post";
+import { Widget } from "./Widget";
 
 const Feed = () => {
   const posts = [
@@ -33,8 +34,8 @@ const Feed = () => {
     },
   ];
   return (
-    <div className="text-white xl:ml-96 border-gray-200 border-l border-r xl:min-w-xl sm:ml-20 flex-grow max-w-xl">
-      <div className=" flex sticky top-0 px-2 py-3 justify-between z-50 border-b border-gray-500">
+    <div className="text-white xl:ml-96 border-gray-600 border-l border-r xl:min-w-xl sm:ml-20 flex-grow max-w-xl">
+      <div className=" flex sticky top-0 px-2 py-3 justify-between z-50 border-b border-gray-600">
         <h2 className="font-bold text-center cursor-pointer sm:text-xl">
           Home
         </h2>
@@ -46,6 +47,7 @@ const Feed = () => {
       {posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}
+      
     </div>
   );
 };
