@@ -6,8 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
+    "@mui/material": "^5.10.9",
     "@supabase/supabase-js": "2.0.0-rc.10",
     "heroicons": "^2.0.12",
     "next": "latest",

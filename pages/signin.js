@@ -1,15 +1,9 @@
 import React, { useState } from "react";
-
-// import {Dialog} from '@headlessui/react';
-
 import { useRouter } from "next/router";
-
 import { supabase } from "../utils/SupabaseClient";
-
 import Image from "next/image";
-
+import Home from "../components/Home";
 import Link from "next/link";
-// {open,onClose}
 const SignIn = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -32,13 +26,9 @@ const SignIn = () => {
   };
   return (
     <>
-      <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap">
-    {/* <Dialog
-    open={open}
-      onClose={onClose}
-    > */}
+      <Home />
+      <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
         <div className="relative w-96 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
-      {/* <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" /> */}
           <div className="flex items-center w-72 h-60 flex-col justify-evenly ">
             <h1 className="text-xl font-bold text-center text-black font-sans">
               Sign in to your account
@@ -95,14 +85,11 @@ const SignIn = () => {
           </div>
           <p className="text-black text-xl font-sans my-8">
             Don't have an account ?
-          <Link href="/signup">
-            <a  className="hover:text-blue-400">
-              Sign Up
-            </a>
-          </Link>
+            <Link href="/signup">
+              <a className="hover:text-blue-400">Sign Up</a>
+            </Link>
           </p>
         </div>
-      {/* </Dialog> */}
       </div>
     </>
   );

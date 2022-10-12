@@ -8,6 +8,8 @@ import Image from "next/image";
 
 import Link from "next/link";
 
+import Home from "../components/Home";
+
 const SignUp = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -30,7 +32,8 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap">
+      <Home />
+      <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
         <div className="relative w-96 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
           <div className="flex items-center w-72 h-60 flex-col justify-evenly ">
             <h1 className="text-xl font-bold text-center text-black font-sans">
