@@ -53,6 +53,7 @@ const Dashboard = () => {
         <Feed />
         {/* widget component */}
         <Widget />
+        
       </main>
     </>
   );

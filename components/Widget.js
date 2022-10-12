@@ -1,5 +1,5 @@
-import { BiDotsHorizontal } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
+import Follow from "./Follow";
 import News from "./News";
 export const Widget = () => {
   const news = [
@@ -12,13 +12,13 @@ export const Widget = () => {
     {
       id: "2",
       article: "Politics . Trending",
-      source: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum ac mauris quis gravida ",
+      source:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum ac mauris quis gravida ",
     },
     {
-        id: "3",
-        article: "#ixigoNikLoSale",
-        source: "Get upto 30% off on the flights with ixigo .",
-       
+      id: "3",
+      article: "#ixigoNikLoSale",
+      source: "Get upto 30% off on the flights with ixigo .",
     },
     {
       id: "4",
@@ -27,6 +27,33 @@ export const Widget = () => {
       img: "https://images.unsplash.com/photo-1475776408506-9a5371e7a068?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
   ];
+  const follow = [
+    {
+      id: "1",
+      name: "Vanshika Garg",
+      userName: "vanshika_garg17",
+      img: "/user1.jpg",
+    },
+    {
+      id: "2",
+      name: "Rajat",
+      userName: "Rajatrajat",
+      img: "/user2.jpg",
+    },
+    {
+      id: "3",
+      name: "Ishan Sharma",
+      userName: "Ishansharma4321",
+      img: "/user3.jpg",
+    },
+    {
+      id: "4",
+      name: "Namita",
+      userName: "namitasharma",
+      img: "/user4.jpg",
+    },
+  ];
+
   return (
     <div className="xl:w-[600px] hidden lg:inline ml-8 space-y-5">
       <div className="w-[90%] xl:w-[75%] sticky top-0 bg-transparent py-1.5 z-50">
@@ -40,16 +67,24 @@ export const Widget = () => {
         </div>
       </div>
       <div className="text-gray-700 space-y-3 bg-[#16181C] rounded-xl pt-2 w-[90%] xl:w-[75%]">
-        <h4 className="text-white pl-3 px-2 py-1 font-extrabold text-xl">What's happening</h4>
+        <h4 className="text-white pl-3 px-2 py-1 font-extrabold text-xl">
+          What's happening
+        </h4>
         {news.map((news) => (
           <News key={news.id} news={news} />
         ))}
         <div className=" hover: cursor-pointer hover:bg-[#1D1F23] transition duration-200 flex items-center space-x-1 space-y-2 py-4">
-
-        <button className="text-sky-500  pl-4 ">
-          Show more
-        </button>
+          <button className="text-sky-500  pl-4 ">Show more</button>
         </div>
+      </div>
+      <div className="flex flex-col rounded-xl w-[90%] xl:w-[75%] space-y-2 bg-[#16181C] ">
+        <h4 className="text-white font-extrabold text-xl px-2 py-2"> Who to follow</h4>
+        {follow.map((follow) => (
+          <Follow key={follow.id} follow={follow} />
+        ))}
+      <div className=" hover: cursor-pointer hover:bg-[#1D1F23] transition duration-200 flex items-center space-x-1 space-y-2 py-4">
+        <button className="text-sky-500 pl-4 ">Show more</button>
+      </div>
       </div>
     </div>
   );
