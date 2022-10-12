@@ -1,7 +1,6 @@
 import { HiOutlineSparkles } from "react-icons/hi";
 import { InputFeed } from "./InputFeed";
 import { Post } from "./Post";
-import { Widget } from "./Widget";
 
 const Feed = () => {
   const posts = [

@@ -48,13 +48,13 @@ const Home = () => {
           </h3>
 
           <div className="button">
-            <Link href="/signup" >
+            <Link href="/signup">
               <a className="btn-signup flex items-center justify-center text-2xl font-bold rounded-full no-underline btn-signup bg-sky-400 mb-5 text-white hover:bg-sky-500 w-96 h-14 font-bold btn">
                 Sign up
               </a>
             </Link>
             {/* onClick={() => setShowSigninModal(true)} */}
-            <Link href="/signin"   >
+            <Link href="/signin">
               <a className="flex items-center justify-center text-2xl font-bold rounded-full no-underline b-2 border-sky-400 border-solid border text-sky-500 w-96 h-14 font-bold btn">
                 Log in
               </a>
