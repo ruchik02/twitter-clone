@@ -43,17 +43,14 @@ const Dashboard = () => {
 
   return (
     <>
-    {/* max-w-7xl */}
-      <main
-        className="flex min-h-screen mx-auto"
-      >
+      {/* max-w-7xl */}
+      <main className="flex min-h-screen mx-auto">
         {/* sidebar  component */}
         <Sidebar />
         {/* Feed component  */}
         <Feed />
         {/* widget component */}
         <Widget />
-        
       </main>
     </>
   );

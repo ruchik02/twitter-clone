@@ -13,15 +13,15 @@ const Follow = ({ follow }) => {
             alt=""
           ></Image>
           <div>
-          <h6 className="text-white text-md font-bold">{follow.name}</h6>
-          <p className=" text-sm font-medium text-gray-500 ">
-            @{follow.userName}
-          </p>
+            <h6 className="text-white text-md font-bold">{follow.name}</h6>
+            <p className=" text-sm font-medium text-gray-500 ">
+              @{follow.userName}
+            </p>
           </div>
-        <button className="bg-white items-center text-black px-2 rounded-full outline-none inline-block font-bold shadow-md hover:brightness-95 text-lg">
-          Follow
-        </button>
-      </div>
+          <button className="bg-white items-center text-black px-2 rounded-full outline-none inline-block font-bold shadow-md hover:brightness-95 text-lg">
+            Follow
+          </button>
+        </div>
       </div>
     </div>
   );

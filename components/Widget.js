@@ -78,13 +78,16 @@ export const Widget = () => {
         </div>
       </div>
       <div className="flex flex-col rounded-xl w-[90%] xl:w-[75%] space-y-2 bg-[#16181C] ">
-        <h4 className="text-white font-extrabold text-xl px-2 py-2"> Who to follow</h4>
+        <h4 className="text-white font-extrabold text-xl px-2 py-2">
+          {" "}
+          Who to follow
+        </h4>
         {follow.map((follow) => (
           <Follow key={follow.id} follow={follow} />
         ))}
-      <div className=" hover: cursor-pointer hover:bg-[#1D1F23] transition duration-200 flex items-center space-x-1 space-y-2 py-4">
-        <button className="text-sky-500 pl-4 ">Show more</button>
-      </div>
+        <div className=" hover: cursor-pointer hover:bg-[#1D1F23] transition duration-200 flex items-center space-x-1 space-y-2 py-4">
+          <button className="text-sky-500 pl-4 ">Show more</button>
+        </div>
       </div>
     </div>
   );
