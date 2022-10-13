@@ -1,11 +1,16 @@
-// import React from 'react'
-// import SignIn from './SigninModal'
-// const Modal = ({modal,setModal}) => {
-//   return (
-//     <>
-//     {modal && <SignIn setModal={setModal}/>}
-//     </>
-//   )
-// }
+import React from 'react'
+import SignIn from './SigninModal'
+import Modal from "react-modal";
+const Modals = ({modalIsOpen, setIsOpen}) => {
 
-// export default Modal
+  return (
+    <>
+<Modal isOpen={modalIsOpen} onRequestClose={() => setIsOpen(false)} >
+<SignIn/>
+</Modal>
+    
+    </>
+  )
+}
+
+export default Modals

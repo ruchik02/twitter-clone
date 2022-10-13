@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 const Home = () => {
-  const [modal,setModal]=useState(false);
+  // const [modal,setModal]=useState(false);
   return (
     <>
       <Head>
@@ -52,7 +52,7 @@ const Home = () => {
             </Link>
             <Link href="/signin">
               <a className="flex items-center justify-center text-2xl font-bold rounded-full no-underline b-2 border-sky-400 border-solid border text-sky-500 w-96 h-14 font-bold btn" 
-              onClick={()=>setModal(true)}
+              // onClick={()=>setModal(true)}
               >
                 Log in
               </a>
