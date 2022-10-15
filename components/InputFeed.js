@@ -13,14 +13,14 @@ export const InputFeed = () => {
         width={50}
         layout="fixed"
         className="hover:brightness-95 rounded-[50%] cursor-pointer "
-      ></Image>
+      />
       <div className="w-full divide-y divide-gray-600">
         <div>
           <textarea
             rows="2"
             className="w-full bg-black resize-none border-none focus:ring-0 text-lg placeholder-gray-700 tracking-wide min-h-12 text-gray-700"
             placeholder="what's happening ?"
-          ></textarea>
+          />
         </div>
         <div className=" flex items-center justify-between pt-2.5">
           <div className="flex ">

@@ -13,7 +13,7 @@ export const Post = ({ post }) => {
           height={50}
           width={50}
           className="rounded-[50%]"
-        ></Image>
+        />
         {/* right side */}
         <div className="flex-1">
           {/* header */}
@@ -45,7 +45,7 @@ export const Post = ({ post }) => {
             width={480}
             className="rounded-2xl mx-2"
             alt="image not found"
-          ></Image>
+          />
           {/* icons */}
           <div className="flex justify-between items-center my-2 p-2">
             <BiComment className=" hover:text-blue-600 hover:bg-gray-500 transition duration-500 ease-out h-8 w-8 hover:rounded-full p-2  " />
