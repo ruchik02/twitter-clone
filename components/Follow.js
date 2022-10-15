@@ -9,7 +9,7 @@ const Follow = ({ follow }) => {
             height={50}
             layout="fixed"
             src={follow.img}
-            alt=""
+            alt="not found"
           ></Image>
           <div >
 

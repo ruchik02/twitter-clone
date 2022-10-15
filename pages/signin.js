@@ -49,6 +49,7 @@ const SignIn = () => {
                 layout="fixed"
                 width={60}
                 height={60}
+                alt="not found image"
               ></Image>
             </i>
             <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">

@@ -49,7 +49,7 @@ const SignUp = () => {
               <span className="mx-2">Sign up with Google</span>
             </button>
             <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
-              <Image src="/apple.png" width={20} height={20}></Image>
+              <Image src="/apple.png" width={20} height={20} alt="not found image"></Image>
               <span className="mx-2">Sign up with Apple</span>
             </button>
           </div>

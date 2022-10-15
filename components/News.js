@@ -17,7 +17,7 @@ const News = ({news}) => {
             height={60}
             layout="fixed"
             src={news.img}
-            alt=""
+            alt="not found"
           ></Image>
         </div>
     </>
