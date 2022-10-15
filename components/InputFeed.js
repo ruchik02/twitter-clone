@@ -12,7 +12,7 @@ export const InputFeed = () => {
         height={50}
         width={50}
         layout="fixed"
-        className="hover:brightness-95 rounded-[50%] cursor-pointer "
+        className="hover:brightness-95 rounded-full cursor-pointer "
       />
       <div className="w-full divide-y divide-gray-600">
         <div>
