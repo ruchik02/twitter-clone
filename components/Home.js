@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 // import { useState } from "react";
 // import {SigninModal} from '../pages/signin';
-
 const Home = () => {
   // const [showSignupModal, setShowSignupModal] = useState(false);
   // const [showSigninModal, setShowSigninModal] = useState(false);
@@ -46,7 +45,7 @@ const Home = () => {
           <h3 className=" text-white font-black text-4xl ">
             Join Twitter today.
           </h3>
-
+          
           <div className="button">
             <Link href="/signup">
               <a className="btn-signup flex items-center justify-center text-2xl font-bold rounded-full no-underline btn-signup bg-sky-400 mb-5 text-white hover:bg-sky-500 w-96 h-14 font-bold btn">
@@ -59,6 +58,22 @@ const Home = () => {
                 Log in
               </a>
             </Link>
+          </div>
+          <div className="text-sm text-gray-400 mt-2">
+            By signing up, you agree to the{" "}
+            <Link href="/">
+              <a className="text-primary">Terms of Service</a>
+            </Link>
+            {" "}
+            and{" "}
+            <Link href="/">
+              <a className="text-primary">privacy policy</a>
+            </Link>
+            , including{" "}
+            <Link href="/">
+              <a className="text-primary">Cookie Use</a>
+            </Link>{" "}
+            .
           </div>
         </div>
 
