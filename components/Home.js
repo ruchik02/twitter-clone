@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 // import { useState } from "react";
 // import {SigninModal} from '../pages/signin';
@@ -19,7 +20,15 @@ const Home = () => {
         <title>Twitter. It's What's happening / Twitter</title>
       </Head>
       <div className="flex flex-wrap h-screen">
+        {/* image */}
         <div className="image h-full bg-center bg-no-repeat bg-cover relative bg-fixed">
+          <Image
+            src="/landing.png"
+            // width={1302}
+            // height={955}
+            layout="fill"
+            className="object-cover"
+          />
           <svg
             viewBox="0 0 24 24"
             aria-hidden="true"

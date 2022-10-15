@@ -15,7 +15,7 @@ body {
   background-color: black;
 }
 .image {
-  background: url("https://github.com/lightcodecamp/twitter-page-clone/blob/main/img/cover-img.png?raw=true");
+  /* background: url("https://github.com/lightcodecamp/twitter-page-clone/blob/main/img/cover-img.png?raw=true"); */
   flex: 0 1 53vw;
 }
 
