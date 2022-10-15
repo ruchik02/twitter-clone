@@ -16,7 +16,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { error } = await supabase.auth.signUp({
+    const { data,error } = await supabase.auth.signUp({
       email: email,
       password: password,
     });
@@ -24,8 +24,9 @@ const SignUp = () => {
     if (error) {
       alert(JSON.stringify(error));
     } else {
-      router.push("/dashboard");
+      router.push("/signin");
     }
+    console.log(data,error);
   };
 
   return (
