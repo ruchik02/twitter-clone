@@ -2,8 +2,71 @@ import Head from "next/head";
 import Link from "next/link";
 // import { useState } from "react";
 // import {SigninModal} from '../pages/signin';
+import FooterWidget from "./FooterWidget";
 
 const Home = () => {
+  const about = [
+    {
+      id: 1,
+      title: "About",
+    },
+    {
+      id: 2,
+      title: "help center",
+    },
+    {
+      id: 3,
+      title: "terms of service",
+    },
+    {
+      id: 4,
+      title: " privacy policy",
+    },
+    {
+      id: 5,
+      title: "cookie policy",
+    },
+    {
+      id: 6,
+      title: " ads info",
+    },
+    {
+      id: 7,
+      title: " blog",
+    },
+    {
+      id: 8,
+      title: " status",
+    },
+    {
+      id: 9,
+      title: " careers",
+    },
+    {
+      id: 11,
+      title: " brand resources",
+    },
+    {
+      id: 12,
+      title: " advertising",
+    },
+    {
+      id: 13,
+      title: " twitter for business",
+    },
+    {
+      id: 14,
+      title: " developers",
+    },
+    {
+      id: 15,
+      title: " directory",
+    },
+    {
+      id: 16,
+      title: "  settings",
+    },
+  ];
   // const [showSignupModal, setShowSignupModal] = useState(false);
   // const [showSigninModal, setShowSigninModal] = useState(false);
   return (
@@ -62,56 +125,11 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="footer">
+        <div className="footer ">
           <nav className="flex flex-row flex-wrap justify-center items-center text-sm">
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              About
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              help center
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              terms of service
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              privacy policy
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              cookie policy
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              ads info
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              blog
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              status
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              careers
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              brand resources
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              advertising
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              marketing
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              twitter for business
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              developers
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              directory
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize ">
-              settings
-            </a>
+            {about.map((about) => (
+              <FooterWidget key={about.id} about={about} />
+            ))}
             <div className="no-underline text-stone-600 capitalize text-lg">
               &copy; 2021 Twitter, Inc.
             </div>
