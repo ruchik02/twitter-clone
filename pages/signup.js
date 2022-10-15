@@ -8,6 +8,8 @@ import Image from "next/image";
 
 import Link from "next/link";
 
+import Input from "../components/Input";
+
 const SignUp = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -56,23 +58,25 @@ const SignUp = () => {
           <h5>Or</h5>
           <div className="w-72 h-60 flex-col justify-evenly">
             <form onSubmit={handleSubmit}>
-              <label htmlFor="email" className="text-gray-400 font-sans">
+              {/* <label htmlFor="email" className="text-gray-400 font-sans">
                 Email
-              </label>
-              <input
+              </label> */}
+              <Input
                 type="text"
-                placeholder="Phone,email, or username"
+                // placeholder="Phone,email, or username"
+                label="Email"
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
+                // className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
-              <label htmlFor="password" className="text-gray-400">
+              {/* <label htmlFor="password" className="text-gray-400">
                 Password
-              </label>
-              <input
-                className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1"
+              </label> */}
+              <Input
+                // className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1"
                 type="password"
+                label="Password"
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
