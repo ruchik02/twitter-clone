@@ -10,7 +10,14 @@ import Link from "next/link";
 
 import Input from "../components/Input";
 
+import { Dialog } from "@headlessui/react";
+
+import {AiFillCloseSquare} from 'react-icons/ai'
+// import SignupModal from "../components/SignupModal";
+
 const SignUp = () => {
+  let [isOpen, setIsOpen] = useState(true);
+  const [showSignupModal, setShowSignupModal] = useState(false);
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,10 +39,17 @@ const SignUp = () => {
 
   return (
     <>
+     {/* <SignupModal/> */}
+      {/* // open={showSignupModal} */}
+      {/* // onClose={() => setShowSignupModal(false)} */}
+      {/* /> */}
+      {/* <SignupModal/> */}
+      <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
       <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap">
         <div className="relative w-96 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
           <div className="flex items-center w-72 h-60 flex-col justify-evenly ">
             <h1 className="text-xl font-bold text-center text-black font-sans">
+            <AiFillCloseSquare className="inline-block -translate-x-14 text-black items-center" onClick={setIsOpen(false)}/>
               Create your account
             </h1>
             <i className="fab fa-twitter text-sky-500 text-2xl ">
@@ -58,23 +72,23 @@ const SignUp = () => {
           <h5>Or</h5>
           <div className="w-72 h-60 flex-col justify-evenly">
             <form onSubmit={handleSubmit}>
-              {/* <label htmlFor="email" className="text-gray-400 font-sans">
+              <label htmlFor="email" className="text-gray-400 font-sans">
                 Email
-              </label> */}
+              </label>
               <Input
                 type="text"
-                // placeholder="Phone,email, or username"
+                 placeholder="Phone,email, or username"
                 label="Email"
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                // className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
+                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
-              {/* <label htmlFor="password" className="text-gray-400">
+              <label htmlFor="password" className="text-gray-400">
                 Password
-              </label> */}
+              </label>
               <Input
-                // className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1"
+                className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1"
                 type="password"
                 label="Password"
                 id="password"
@@ -97,6 +111,7 @@ const SignUp = () => {
           </button>
         </div>
       </div>
+     </Dialog>
     </>
   );
 };
