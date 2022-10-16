@@ -10,7 +10,7 @@ import Link from "next/link";
 
 import Input from "../components/Input";
 
-import { Dialog } from "@headlessui/react";
+// import { Dialog } from "@headlessui/react";
 
 import {AiFillCloseSquare} from 'react-icons/ai'
 // import SignupModal from "../components/SignupModal";
@@ -44,12 +44,13 @@ const SignUp = () => {
       {/* // onClose={() => setShowSignupModal(false)} */}
       {/* /> */}
       {/* <SignupModal/> */}
-      <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+      {/* <Dialog open={isOpen} onClose={() => setIsOpen(false)}> */}
       <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap">
+      {/* <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" /> */}
         <div className="relative w-96 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
           <div className="flex items-center w-72 h-60 flex-col justify-evenly ">
             <h1 className="text-xl font-bold text-center text-black font-sans">
-            <AiFillCloseSquare className="inline-block -translate-x-14 text-black items-center" onClick={setIsOpen(false)}/>
+            {/* <AiFillCloseSquare className="inline-block -translate-x-14 text-black items-center" onClick={setIsOpen(false)}/> */}
               Create your account
             </h1>
             <i className="fab fa-twitter text-sky-500 text-2xl ">
@@ -111,7 +112,7 @@ const SignUp = () => {
           </button>
         </div>
       </div>
-     </Dialog>
+     {/* </Dialog> */}
     </>
   );
 };
