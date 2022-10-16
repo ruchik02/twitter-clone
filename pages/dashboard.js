@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { supabase } from "../utils/SupabaseClient";
 import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import { Widget } from "../components/Widget";
+import { useRouter } from "next/router";
 
 const Dashboard = () => {
   const router = useRouter();
   const [user, setUser] = useState();
-
+  const LoginUser = supabase.auth.getUser();
+  console.log(LoginUser);
   const handleLogOut = async (e) => {
     e.preventDefault();
 
-    const { error } = await supabase.auth.signOut();
+    const { data: LoginUser, error } = await supabase.auth.signOut();
 
     if (error) {
       alert(JSON.stringify(error));
     } else {
       router.push("/");
+      console.log(LoginUser);
     }
   };
 
