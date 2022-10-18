@@ -4,6 +4,7 @@ import { supabase } from "../utils/SupabaseClient";
 import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import { Widget } from "../components/Widget";
+import Heading from "../components/Head";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -44,6 +45,7 @@ const Dashboard = () => {
   return (
     <>
       {/* max-w-7xl */}
+      <Heading/>
       <main className="flex min-h-screen mx-auto">
         {/* sidebar  component */}
         <Sidebar />
