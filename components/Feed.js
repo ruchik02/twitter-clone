@@ -8,6 +8,7 @@ const Feed = () => {
   const router = useRouter();
   const [tweets, setTweets] = useState([]);
   const user = supabase.auth.getUser();
+  const[reload,setReload]=useState(false);
   console.log("Feed section", user);
   useEffect(() => {
     (async () => {
@@ -19,7 +20,7 @@ const Feed = () => {
       setTweets(tweets);
       console.log(tweets, error);
     })();
-  }, []);
+  }, [reload]);
   const logout = async () => {
     await supabase.auth.signOut();
     router.push("/");
@@ -63,7 +64,7 @@ const Feed = () => {
           <HiOutlineSparkles className="h-5 w-5" />
         </div>
       </div>
-      <InputFeed />
+      <InputFeed reload={reload} setReload={setReload} />
       {tweets.map((tweet) => (
         <Post key={tweet.id} tweet={tweet} />
       ))}

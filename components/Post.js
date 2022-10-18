@@ -42,12 +42,12 @@ export const Post = ({ tweet}) => {
           <div className="flex items-center justify-between mx-3">
             <div className=" flex items-center space-x-1 whitespace-nowrap">
               {/* user info */}
-              {/* <h4 className="font-bold text-lg sm:text-md capitalize hover:underline">
+              <h4 className="font-bold text-lg sm:text-md capitalize hover:underline">
                 {tweet.profiles.name}
-              </h4> */}
-              {/* <span className="text-sm  sm:text-md text-gray-500">
+              </h4>
+              <span className="text-sm  sm:text-md text-gray-500">
                 @{tweet.profiles.username} 
-              </span> */}
+              </span>
               <span className="text-sm sm:text-md text-gray-500 hover:underline">
               {moment(tweet.created_at).fromNow(true)}
               </span>
@@ -60,15 +60,15 @@ export const Post = ({ tweet}) => {
             {tweet.body}
           </p>
           {/* image */}
-          <Image
-            // src={post.img}
+          {/* <Image
+            src={post.img}
             src="/user.jpg"
             layout="fixed"
             height={300}
             width={480}
             className="rounded-2xl mx-2"
             alt="image not found"
-          ></Image>
+          ></Image> */}
           {/* icons */}
           <div className="flex justify-between items-center my-2 p-2">
             <BiComment className=" hover:text-blue-600 hover:bg-gray-500 transition duration-500 ease-out h-8 w-8 hover:rounded-full p-2  " />
