@@ -5,6 +5,7 @@ const Input = ({ label, value, onChange }) => {
         value={value}
         className="w-full outline-none  peer relative  pl-3 rounded-md text-sm  focus:border-sky-500 space-y-3  font-sans "
         onChange={onChange}
+        // type="password"
       />
       <div
         className={`absolute w-full h-full left-4 top-0 flex ${

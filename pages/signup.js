@@ -17,6 +17,7 @@ import {AiFillCloseSquare} from 'react-icons/ai'
 
 const SignUp = () => {
   let [isOpen, setIsOpen] = useState(true);
+  const [name,setName]=useState("");
   const [showSignupModal, setShowSignupModal] = useState(false);
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -26,6 +27,7 @@ const SignUp = () => {
     e.preventDefault();
 
     const { error } = await supabase.auth.signUp({
+      name:name,
       email: email,
       password: password,
     });
@@ -69,13 +71,25 @@ const SignUp = () => {
               <Image src="/apple.png" width={20} height={20}></Image>
               <span className="mx-2">Sign up with Apple</span>
             </button>
-          </div>
+          </div> 
           <h5>Or</h5>
-          <div className="w-72 h-60 flex-col justify-evenly">
-            <form onSubmit={handleSubmit}>
-              <label htmlFor="email" className="text-gray-400 font-sans">
+          <div className="w-72 h-72 flex-col justify-evenly">
+            <form onSubmit={handleSubmit} className="space-y-4">
+            {/* <label htmlFor="name" className="text-gray-400 font-sans">
+              Name
+            </label> */}
+            <Input
+                type="text"
+                 placeholder="Enter Your Name "
+                label="Name"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
+              />
+              {/* <label htmlFor="email" className="text-gray-400 font-sans">
                 Email
-              </label>
+              </label> */}
               <Input
                 type="text"
                  placeholder="Phone,email, or username"
@@ -85,9 +99,9 @@ const SignUp = () => {
                 onChange={(e) => setEmail(e.target.value)}
                  className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
-              <label htmlFor="password" className="text-gray-400">
+              {/* <label htmlFor="password" className="text-gray-400">
                 Password
-              </label>
+              </label> */}
               <Input
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1"
                 type="password"
