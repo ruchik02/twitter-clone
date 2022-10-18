@@ -10,12 +10,12 @@ import Link from "next/link";
 
 import Input from "../components/Input";
 
-import Home from '../components/Home';
+import Home from "../components/Home";
 
 const SignUp = () => {
   const router = useRouter();
-  const[name,setName]=useState("");
-  const[username,setUserName]=useState("");
+  const [name, setName] = useState("");
+  const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,8 +23,8 @@ const SignUp = () => {
     e.preventDefault();
 
     const { error } = await supabase.auth.signUp({
-      name:name,
-      username:username,
+      name: name,
+      username: username,
       email: email,
       password: password,
     });
@@ -38,7 +38,7 @@ const SignUp = () => {
 
   return (
     <>
-    <Home/>
+      <Home />
       <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
         <div className="relative w-96 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
           <div className="flex items-center  flex-col justify-evenly ">
@@ -65,7 +65,7 @@ const SignUp = () => {
           {/* <h5>Or</h5> */}
           <div className="w-72 h-96 flex-col justify-evenly">
             <form onSubmit={handleSubmit}>
-            <label htmlFor="Name" className="text-gray-400 font-sans">
+              <label htmlFor="Name" className="text-gray-400 font-sans">
                 Name
               </label>
               <Input
