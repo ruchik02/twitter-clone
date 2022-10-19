@@ -71,8 +71,8 @@ const PasswordReset = () => {
   return (
     <>
     <Home/>
-    <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
-      <div className="relative w-1/4 h-2/4 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
+    <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm fixed">
+      <div className="relative w-80 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
         <div className="flex items-center w-72 h-60 flex-col justify-evenly ">
         <h2 className="text-3xl font-bold font-sans">Reset Password</h2>
           <i className="fab fa-twitter text-sky-500 text-2xl ">
