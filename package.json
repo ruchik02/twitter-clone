@@ -8,6 +8,9 @@
   "dependencies": {
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
+    "@supabase/auth-helpers-nextjs": "^0.4.1",
+    "@supabase/auth-helpers-react": "^0.3.0",
+    "@supabase/auth-ui-react": "^0.2.2",
     "@supabase/supabase-js": "2.0.0-rc.10",
     "heroicons": "^2.0.12",
     "moment": "^2.29.4",
@@ -15,7 +18,8 @@
     "next-auth": "^4.13.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "react-icons": "^4.4.0",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.6.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

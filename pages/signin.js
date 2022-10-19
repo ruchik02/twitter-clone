@@ -11,16 +11,19 @@ import Image from "next/image";
 import Link from "next/link";
 import Home from "../components/Home";
 // {open,onClose}
-const SignIn = () => {
+const SignIn = ({name,username}) => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const[forget,setForgetPassword]=useState()
 
   const handleSignIn = async (e) => {
     e.preventDefault();
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
+      name:name,
+      username:username,
       password: password,
     });
 
@@ -31,6 +34,11 @@ const SignIn = () => {
     }
     console.log(error, data);
   };
+  const ForgetPassword=async(e)=>{
+    e.preventDefault();
+    router.push('/reset')
+  }
+  
   return (
     <>
     <Home/>
@@ -91,7 +99,9 @@ const SignIn = () => {
                 Sign in with Email
               </button>
             </form>
-            <button className="flex items-center w-72 h-10 bg-white outline-none font-bold justify-center font-sans text-lg rounded-full my-3 b-2 border-sky-400 border-solid border text-sky-500">
+            <button className="flex items-center w-72 h-10 bg-white outline-none font-bold justify-center font-sans text-lg rounded-full my-3 b-2 border-sky-400 border-solid border text-sky-500"
+             onClick={ForgetPassword}
+            >
               Forget password?
             </button>
           </div>
