@@ -10,11 +10,17 @@
     "@heroicons/react": "^2.0.12",
     "@supabase/supabase-js": "2.0.0-rc.10",
     "heroicons": "^2.0.12",
+    "moment": "^2.29.4",
     "next": "latest",
+    "next-auth": "^4.13.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
+<<<<<<< HEAD
     "recoil": "^0.7.6"
+=======
+    "uuid": "^9.0.0"
+>>>>>>> 011aa396219c0ee3b0b8a98f710ad9e53e465c39
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",

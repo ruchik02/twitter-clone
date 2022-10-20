@@ -56,7 +56,7 @@ export const Widget = () => {
 
   return (
     <div className="xl:w-[600px] hidden lg:inline ml-8 space-y-5">
-      <div className="w-[90%] xl:w-[75%] sticky top-0 bg-transparent py-1.5 z-50">
+      <div className="w-[90%] xl:w-3/4 sticky top-0 bg-transparent py-1.5 z-50">
         <div className="flex items-center p-3 rounded-full relative">
           <BsSearch className="h-5 z-50 text-gray-500" />
           <input
@@ -66,25 +66,25 @@ export const Widget = () => {
           />
         </div>
       </div>
-      <div className="text-gray-700 space-y-3 bg-[#16181C] rounded-xl pt-2 w-[90%] xl:w-[75%]">
+      <div className="text-gray-700 space-y-3 bg-zinc-900 rounded-xl pt-2 w-10/12 xl:w-3/4">
         <h4 className="text-white pl-3 px-2 py-1 font-extrabold text-xl">
           What's happening
         </h4>
         {news.map((news) => (
           <News key={news.id} news={news} />
         ))}
-        <div className=" hover: cursor-pointer hover:bg-[#1D1F23] transition duration-200 flex items-center space-x-1 space-y-2 py-4">
+        <div className=" hover: cursor-pointer hover:bg-zinc-900 transition duration-200 flex items-center space-x-1 space-y-2 py-4">
           <button className="text-sky-500  pl-4 ">Show more</button>
         </div>
       </div>
-      <div className="flex flex-col rounded-xl w-[90%] xl:w-[75%] space-y-2 bg-[#16181C] ">
+      <div className="flex flex-col rounded-xl w-10/12 xl:w-3/4 space-y-2 bg-zinc-900 ">
         <h4 className="text-white font-extrabold text-xl px-4 mt-2 py-2">
           Who to follow
         </h4>
         {follow.map((follow) => (
           <Follow key={follow.id} follow={follow} />
         ))}
-        <div className=" hover: cursor-pointer rounded-xl  hover:bg-[#1D1F23] transition duration-200 flex items-center space-x-1 space-y-2 py-4">
+        <div className=" hover: cursor-pointer rounded-xl  hover:bg-zinc-900 transition duration-200 flex items-center space-x-1 space-y-2 py-4">
           <button className="text-sky-500 pl-4 ">Show more</button>
         </div>
       </div>
