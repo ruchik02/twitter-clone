@@ -4,7 +4,8 @@ import { supabase } from "../utils/SupabaseClient";
 import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import { Widget } from "../components/Widget";
-import Heading from "../components/Head";
+// import Heading from "../components/Head";
+import Head from "next/head";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -45,15 +46,24 @@ const Dashboard = () => {
   return (
     <>
       {/* max-w-7xl */}
-      <Heading/>
-      <main className="flex min-h-screen mx-auto">
-        {/* sidebar  component */}
-        <Sidebar />
-        {/* Feed component  */}
-        <Feed />
-        {/* widget component */}
-        <Widget />
-      </main>
+      <div>
+        <Head>
+          <link
+            rel="icon"
+            href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
+          />
+          <title>Home / Twitter </title>
+        </Head>
+        {/* <Heading/> */}
+        <main className="flex min-h-screen mx-auto">
+          {/* sidebar  component */}
+          <Sidebar />
+          {/* Feed component  */}
+          <Feed />
+          {/* widget component */}
+          <Widget />
+        </main>
+      </div>
     </>
   );
 };

@@ -10,6 +10,7 @@
     "@heroicons/react": "^2.0.12",
     "@supabase/supabase-js": "2.0.0-rc.10",
     "heroicons": "^2.0.12",
+    "js-cookie": "^3.0.1",
     "moment": "^2.29.4",
     "next": "latest",
     "next-auth": "^4.13.0",
