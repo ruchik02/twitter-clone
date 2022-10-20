@@ -45,7 +45,7 @@ const SignIn = () => {
               <Image src="/twitter.png" layout="fixed" width={60} height={60} />
             </i>
             <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
-              <Image src="/google.png" width={25} height={25}></Image>
+              <Image src="/google.png" width={25} height={25}/>
               <span className="mx-2">Sign in with Google</span>
             </button>
             <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
