@@ -44,8 +44,8 @@ export const InputFeed = ({reload,setReload}) => {
         height={50}
         width={50}
         layout="fixed"
-        className="hover:brightness-95 rounded-[50%] cursor-pointer "
-      ></Image>
+        className="hover:brightness-95 rounded-full cursor-pointer "
+      />
       <div className="w-full divide-y divide-gray-600">
         <div>
           <textarea
@@ -54,7 +54,7 @@ export const InputFeed = ({reload,setReload}) => {
             placeholder="what's happening ?"
             value={tweet}
             onChange={(e) => setTweet(e.target.value)}
-          ></textarea>
+          />
         </div>
         <div className=" flex items-center justify-between pt-2.5">
           <div className="flex ">
