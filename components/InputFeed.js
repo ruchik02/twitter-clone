@@ -34,7 +34,7 @@ export const InputFeed = ({reload,setReload}) => {
     setTweet('');
   };
   return (
-    <div className="flex border-b border-gray-600 p-3  space-x-3">
+    <div className="flex border-gray-200 p-3  space-x-3">
       <Image
         // src={
         //   user ? Img :"https://links.papareact.com/gll"
@@ -50,7 +50,7 @@ export const InputFeed = ({reload,setReload}) => {
         <div>
           <textarea
             rows="2"
-            className="w-full bg-black resize-none border-none focus:ring-0 text-lg placeholder-gray-700 tracking-wide min-h-12 text-gray-700"
+            className="w-full bg-black resize-none border-none focus:ring-0 text-lg placeholder-gray-700 tracking-wide min-h-12 text-white"
             placeholder="what's happening ?"
             value={tweet}
             onChange={(e) => setTweet(e.target.value)}
