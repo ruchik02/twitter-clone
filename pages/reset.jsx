@@ -8,13 +8,15 @@ const Reset = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const notification = toast.loading("Sending Email....");
+    console.log("email",email);
     try{
-    const { data, error } = await supabase.auth.api.resetPasswordForEmail(
+    const { data, error } = await supabase.auth.resetPasswordForEmail(
       email,
       {
         redirectTo: "http://localhost:3000/password-reset",
       }
     );
+    console.log("data and error",data,error);
     if (error) {
       toast.error(error.message, {
         id: notification,
@@ -28,7 +30,10 @@ const Reset = () => {
   } catch (error) {
     toast.error("Sorry Error occured", {
       id: notification,
+      
     });
+    console.log("error",error);
+  
   }
   };
   return (

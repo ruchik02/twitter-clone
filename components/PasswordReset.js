@@ -47,7 +47,7 @@ const PasswordReset = () => {
         }
 
         //   now we will change the password
-        const { error } = await supabase.auth.api.updateUser(accessToken, {
+        const { error } = await supabase.auth.updateUser(accessToken, {
           password: password,
         });
 
@@ -66,6 +66,7 @@ const PasswordReset = () => {
       toast.error("Sorry Error occured", {
         id: notification,
       });
+      console.log(error);
     }
   };
   return (

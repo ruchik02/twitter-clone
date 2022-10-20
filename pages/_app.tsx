@@ -30,12 +30,18 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [checkUser])
 
   async function handleAuthchange(event,session){
-    await fetch('/api/index',{
+    await fetch('/pages/index',{
       method:"POST",
       headers:new Headers({'Content-Type':"application/json"}),
       credentials:'same-origin',
       body:JSON.stringify({event,session})
-    })
+    
+    }
+    // checkUser()
+    // return=()=>{
+
+    // }
+    )
 
   }
   async function checkUser(){
@@ -49,11 +55,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }
   
-  return 
+  return(
   <>
   <Toaster/>
   <Component {...pageProps} />
   </>
+  )
 }
 
 export default MyApp

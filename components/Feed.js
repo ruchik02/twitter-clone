@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/supabaseClient";
 const Feed = () => {
+  
   const router = useRouter();
   const [tweets, setTweets] = useState([]);
   const user = supabase.auth.getUser();
@@ -13,7 +14,7 @@ const Feed = () => {
   useEffect(() => {
     (async () => {
       const { data: tweets, error } = await supabase
-        .from("tweets")
+        .from("tweet")
         .select("*, profiles:profile_id (name,username)")
         .order("created_at", { ascending: false });
 
