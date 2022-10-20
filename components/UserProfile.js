@@ -18,7 +18,7 @@ const UserProfile = () => {
       <div className="flex items-center">
         <div className="flex-1">
           <h1 className="text-3xl font-bold">Ruchika Sharma</h1>
-          <h4 className="text-xl text-gray-600">@@RuchikaRuchikas</h4>
+          <h4 className="text-xl text-gray-600">@RuchikaRuchikas</h4>
         </div>
         <button
         //   onClick={() => {
