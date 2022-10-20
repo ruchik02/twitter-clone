@@ -10,11 +10,17 @@ import Image from "next/image";
 
 import Link from "next/link";
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import Input from "../components/Input";
 =======
 import Home from "../components/Home";
 >>>>>>> 011aa396219c0ee3b0b8a98f710ad9e53e465c39
+=======
+
+import Input from "../components/Input";
+import Home from "../components/Home";
+>>>>>>> 000819afab154567473d0e150f5c75619941d1f0
 // {open,onClose}
 const SignIn = () => {
   const router = useRouter();

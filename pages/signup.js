@@ -11,6 +11,7 @@ import Link from "next/link";
 import Input from "../components/Input";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import { Dialog } from "@headlessui/react";
 
 import {AiFillCloseSquare} from 'react-icons/ai'
@@ -18,6 +19,13 @@ import {AiFillCloseSquare} from 'react-icons/ai'
 =======
 import Home from "../components/Home";
 >>>>>>> 011aa396219c0ee3b0b8a98f710ad9e53e465c39
+=======
+
+
+import {AiFillCloseSquare} from 'react-icons/ai'
+import Home from "../components/Home";
+
+>>>>>>> 000819afab154567473d0e150f5c75619941d1f0
 
 const SignUp = () => {
   let [isOpen, setIsOpen] = useState(true);
@@ -34,11 +42,16 @@ const SignUp = () => {
 
     const { error } = await supabase.auth.signUp({
 <<<<<<< HEAD
+<<<<<<< HEAD
       name:name,
 =======
       name: name,
       username: username,
 >>>>>>> 011aa396219c0ee3b0b8a98f710ad9e53e465c39
+=======
+      name: name,
+      username: username,
+>>>>>>> 000819afab154567473d0e150f5c75619941d1f0
       email: email,
       password: password,
     });
@@ -53,6 +66,7 @@ const SignUp = () => {
   return (
     <>
 <<<<<<< HEAD
+<<<<<<< HEAD
      {/* <SignupModal/> */}
       {/* // open={showSignupModal} */}
       {/* // onClose={() => setShowSignupModal(false)} */}
@@ -65,6 +79,11 @@ const SignUp = () => {
       <Home />
       <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
 >>>>>>> 011aa396219c0ee3b0b8a98f710ad9e53e465c39
+=======
+      <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap">
+      <Home />
+      <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
+>>>>>>> 000819afab154567473d0e150f5c75619941d1f0
         <div className="relative w-96 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
           <div className="flex items-center  flex-col justify-evenly ">
             <h1 className="text-xl font-bold text-center text-black font-sans">
@@ -82,19 +101,30 @@ const SignUp = () => {
               <Image src="/apple.png" width={20} height={20}></Image>
               <span className="mx-2">Sign up with Apple</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 000819afab154567473d0e150f5c75619941d1f0
             </button>
+            */}
           </div> 
-          <h5>Or</h5>
+         {/* <h5>Or</h5>*/}
           <div className="w-72 h-72 flex-col justify-evenly">
             <form onSubmit={handleSubmit} className="space-y-4">
-            {/* <label htmlFor="name" className="text-gray-400 font-sans">
-              Name
-            </label> */}
             <Input
+<<<<<<< HEAD
 =======
             </button> */}
+=======
+                type="text"
+                 placeholder="Enter Your Name "
+                label="Name"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
+              />
+>>>>>>> 000819afab154567473d0e150f5c75619941d1f0
           </div>
-          {/* <h5>Or</h5> */}
           <div className="w-72 h-96 flex-col justify-evenly">
             <form onSubmit={handleSubmit}>
               <label htmlFor="Name" className="text-gray-400 font-sans">
@@ -119,6 +149,7 @@ const SignUp = () => {
                 onChange={(e) => setUserName(e.target.value)}
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
+<<<<<<< HEAD
               <label htmlFor="email" className="text-gray-400 font-sans">
                 Email
               </label>
@@ -135,6 +166,8 @@ const SignUp = () => {
               {/* <label htmlFor="email" className="text-gray-400 font-sans">
                 Email
               </label> */}
+=======
+>>>>>>> 000819afab154567473d0e150f5c75619941d1f0
               <Input
                 type="text"
                  placeholder="Phone,email, or username"
@@ -144,6 +177,7 @@ const SignUp = () => {
                 onChange={(e) => setEmail(e.target.value)}
                  className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
+<<<<<<< HEAD
               {/* <label htmlFor="password" className="text-gray-400">
                 Password
 <<<<<<< HEAD
@@ -151,6 +185,8 @@ const SignUp = () => {
 =======
               </label>
 >>>>>>> 011aa396219c0ee3b0b8a98f710ad9e53e465c39
+=======
+>>>>>>> 000819afab154567473d0e150f5c75619941d1f0
               <Input
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1"
                 type="password"
@@ -175,7 +211,6 @@ const SignUp = () => {
           </button>
         </div>
       </div>
-     {/* </Dialog> */}
     </>
   );
 };
