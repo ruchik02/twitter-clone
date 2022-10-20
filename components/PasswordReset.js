@@ -3,6 +3,7 @@ import Img from "../public/twitter.png";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import Home from "./Home";
+import { supabase } from "../utils/SupabaseClient";
 const PasswordReset = () => {
   const [password, setPassword] = useState(null);
   const[hash, setHash] = useState(null);
@@ -37,7 +38,7 @@ const PasswordReset = () => {
 
         if (
           type !== "recovery" ||
-          !accessToken ||
+            !accessToken ||
           typeof accessToken === "object"
         ) {
           toast.error("Invalid access token or type", {
@@ -46,9 +47,8 @@ const PasswordReset = () => {
           return;
         }
 
-        //   now we will change the password
         const { error } = await supabase.auth.updateUser(accessToken, {
-          password: password,
+         password,
         });
 
         if (error) {
@@ -69,6 +69,7 @@ const PasswordReset = () => {
       console.log(error);
     }
   };
+  
   return (
     <>
     <Home/>
