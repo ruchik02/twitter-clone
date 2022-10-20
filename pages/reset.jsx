@@ -12,8 +12,7 @@ const Reset = () => {
     const { data, error } = await supabase.auth.api.resetPasswordForEmail(
       email,
       {
-        redirectTo: "http://localhost:3000/password-reset", //// this will redirect to us at password-reset page,
-        //// you can also set your own page for it.
+        redirectTo: "http://localhost:3000/password-reset",
       }
     );
     if (error) {

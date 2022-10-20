@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
 
 import { supabase } from "../utils/SupabaseClient";
+import { Toaster } from 'react-hot-toast';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -48,7 +49,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
   }
   
-  return <Component {...pageProps} />
+  return 
+  <>
+  <Toaster/>
+  <Component {...pageProps} />
+  </>
 }
 
 export default MyApp
