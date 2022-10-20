@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Input from "../components/Input";
+import Home from "../components/Home";
 // {open,onClose}
 const SignIn = () => {
   const router = useRouter();
@@ -34,7 +35,8 @@ const SignIn = () => {
   };
   return (
     <>
-      <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap">
+    <Home/>
+      <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
     {/* <Dialog
     open={open}
       onClose={onClose}
