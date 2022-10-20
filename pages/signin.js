@@ -9,6 +9,7 @@ import { supabase } from "../utils/SupabaseClient";
 import Image from "next/image";
 
 import Link from "next/link";
+import Home from "../components/Home";
 // {open,onClose}
 const SignIn = () => {
   const router = useRouter();
@@ -33,10 +34,8 @@ const SignIn = () => {
   return (
     <>
       <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap">
-        {/* <Dialog
-    open={open}
-      onClose={onClose}
-    > */}
+    <Home/>
+      <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
         <div className="relative w-96 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
           {/* <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" /> */}
           <div className="flex items-center w-72 h-60 flex-col justify-evenly ">
@@ -95,7 +94,6 @@ const SignIn = () => {
             </Link>
           </p>
         </div>
-        {/* </Dialog> */}
       </div>
     </>
   );
