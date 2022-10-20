@@ -49,7 +49,7 @@ const SignIn = () => {
               <span className="mx-2">Sign in with Google</span>
             </button>
             <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
-              <Image src="/apple.png" width={20} height={20}></Image>
+              <Image src="/apple.png" width={20} height={20}/>
               <span className="mx-2">Sign in with Apple</span>
             </button>
           </div>
