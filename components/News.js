@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { BiDotsHorizontal } from "react-icons/bi";
 
-const News = ({news}) => {
+const News = ({ news }) => {
   return (
     <>
+<<<<<<< HEAD
         <div className="hover: cursor-pointer flex items-center justify-between px-4 py-3 space-x-1 hover:bg-[#1D1F23] transition duration-200">
           <div className=" space-y-0.5">
             <h6 className="text-white text-md font-bold">{news.article}</h6>
@@ -19,7 +20,22 @@ const News = ({news}) => {
             src={news.img}
             alt="not found"
           ></Image>
+=======
+      <div className="hover: cursor-pointer flex items-center justify-between px-4 py-3 space-x-1 hover:bg-zinc-900 transition duration-200">
+        <div className=" space-y-0.5">
+          <h6 className="text-white text-md font-bold">{news.article}</h6>
+          <p className=" text-sm font-medium text-gray-500">{news.source}</p>
+>>>>>>> 011aa396219c0ee3b0b8a98f710ad9e53e465c39
         </div>
+        <Image
+          className="rounded-xl"
+          width={70}
+          height={60}
+          layout="fixed"
+          src={news.img}
+          alt=""
+        />
+      </div>
     </>
   );
 };

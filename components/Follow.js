@@ -1,7 +1,7 @@
 import Image from "next/image";
 const Follow = ({ follow }) => {
   return (
-    <div className="hover:cursor-pointer px-4 py-2 flex items-center justify-between hover:bg-[#1D1F23] transition duration-200">
+    <div className="hover:cursor-pointer px-4 py-2 flex items-center justify-between hover:bg-zinc-900 transition duration-200">
           <div className="flex items-center space-x-3">
           <Image
             className="rounded-full"
@@ -9,8 +9,13 @@ const Follow = ({ follow }) => {
             height={50}
             layout="fixed"
             src={follow.img}
+<<<<<<< HEAD
             alt="not found"
           ></Image>
+=======
+            alt=""
+          />
+>>>>>>> 011aa396219c0ee3b0b8a98f710ad9e53e465c39
           <div >
 
             <h6 className="text-white text-md font-bold">{follow.name}</h6>
