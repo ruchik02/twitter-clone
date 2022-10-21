@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { supabase } from "../utils/SupabaseClient";
+import { supabase } from "../utils/supabaseClient";
 import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import { Widget } from "../components/Widget";

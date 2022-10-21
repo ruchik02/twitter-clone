@@ -43,7 +43,7 @@ const Sidebar = () => {
             width="50"
             height="50"
             className="h-10 w-10 rounded-full xl:mr-2"
-          ></Image>
+          />
 
           <div
             className="leading-5 hidden xl:inline mx-2"

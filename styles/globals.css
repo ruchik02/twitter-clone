@@ -13,9 +13,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: black;
+  /* background-color: white; */
 }
 .image {
-  background: url("https://github.com/lightcodecamp/twitter-page-clone/blob/main/img/cover-img.png?raw=true");
+  /* background: url("https://github.com/lightcodecamp/twitter-page-clone/blob/main/img/cover-img.png?raw=true"); */
   flex: 0 1 53vw;
 }
 
