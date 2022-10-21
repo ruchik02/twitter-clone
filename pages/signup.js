@@ -48,57 +48,41 @@ const SignUp = () => {
             <i className="fab fa-twitter text-sky-500 text-2xl ">
               <Image src="/twitter.png" layout="fixed" width={60} height={60} />
             </i>
-            {/* <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
-              <Image src="/google.png" width={25} height={25}></Image>
-              <span className="mx-2">Sign up with Google</span>
-            </button>
-            <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
-              <Image src="/apple.png" width={20} height={20} alt="not found image"></Image>
-              <span className="mx-2">Sign up with Apple</span>
-            </button> */}
           </div>
-          {/* <h5>Or</h5> */}
-          <div className="w-72 h-96 flex-col justify-evenly">
+
+          <div className="w-72 flex-col justify-evenly">
             <form onSubmit={handleSubmit}>
-              <label htmlFor="Name" className="text-gray-400 font-sans">
-                Name
-              </label>
               <Input
                 type="text"
                 placeholder="Enter your Name "
+                label="Name"
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
-              <label htmlFor="username" className="text-gray-400 font-sans">
-                UserName
-              </label>
               <Input
                 type="text"
                 placeholder="username"
+                label="UserName"
                 id="username"
                 value={username}
                 onChange={(e) => setUserName(e.target.value)}
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
-              <label htmlFor="email" className="text-gray-400 font-sans">
-                Email
-              </label>
               <Input
                 type="text"
                 placeholder="Phone,email, or username"
+                label="Email"
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
-              <label htmlFor="password" className="text-gray-400">
-                Password
-              </label>
               <Input
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1"
                 type="password"
+                label="Password"
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

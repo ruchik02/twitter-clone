@@ -9,6 +9,8 @@ import { supabase } from "../utils/SupabaseClient";
 import Image from "next/image";
 
 import Link from "next/link";
+
+import Input from "../components/Input";
 import Home from "../components/Home";
 // {open,onClose}
 const SignIn = () => {
@@ -33,7 +35,7 @@ const SignIn = () => {
   };
   return (
     <>
-    <Home/>
+      <Home />
       <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
         <div className="relative w-96 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
           {/* <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" /> */}
@@ -45,35 +47,37 @@ const SignIn = () => {
               <Image src="/twitter.png" layout="fixed" width={60} height={60} />
             </i>
             <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
-              <Image src="/google.png" width={25} height={25}/>
+              <Image src="/google.png" width={25} height={25} />
               <span className="mx-2">Sign in with Google</span>
             </button>
             <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
-              <Image src="/apple.png" width={20} height={20}/>
+              <Image src="/apple.png" width={20} height={20} />
               <span className="mx-2">Sign in with Apple</span>
             </button>
           </div>
           <h5>Or</h5>
           <div className="w-72 h-60 flex-col justify-evenly">
             <form onSubmit={handleSignIn}>
-              <label htmlFor="email" className="text-gray-400 font-sans">
+              {/* <label htmlFor="email" className="text-gray-400 font-sans">
                 Email
-              </label>
-              <input
+              </label> */}
+              <Input
                 type="text"
-                placeholder="Phone,email, or username"
+                // placeholder="Phone,email, or username"
                 id="email"
+                label="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
+                // className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
-              <label htmlFor="password" className="text-gray-400">
+              {/* <label htmlFor="password" className="text-gray-400">
                 Password
-              </label>
-              <input
-                className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1"
+              </label> */}
+              <Input
+                // className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1"
                 type="password"
                 id="password"
+                label="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
