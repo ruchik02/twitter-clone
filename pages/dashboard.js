@@ -45,7 +45,7 @@ const Dashboard = () => {
   return (
     <>
       {/* max-w-7xl */}
-      <Heading/>
+      <Heading />
       <main className="flex min-h-screen mx-auto">
         {/* sidebar  component */}
         <Sidebar />

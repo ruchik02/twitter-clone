@@ -8,7 +8,7 @@ const Feed = () => {
   const router = useRouter();
   const [tweets, setTweets] = useState([]);
   const user = supabase.auth.getUser();
-  const[reload,setReload]=useState(false);
+  const [reload, setReload] = useState(false);
   console.log("Feed section", user);
   useEffect(() => {
     (async () => {

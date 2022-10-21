@@ -10,6 +10,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 import Home from "../components/Home";
+import { type } from "os";
 // {open,onClose}
 const SignIn = () => {
   const router = useRouter();
@@ -18,22 +19,37 @@ const SignIn = () => {
 
   const handleSignIn = async (e) => {
     e.preventDefault();
+    try {
+      const {
+        error,
+        data: { user },
+      } =
+        type === "LOGIN"
+          ? await supabase.auth.signInWithPassword({
+              email: username,
+              password,
+            })
+          : await supabase.auth.signUp({ email: username, password });
 
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: password,
-    });
+      // const { data, error } = await supabase.auth.signInWithPassword({
+      //   email: email,
+      //   password: password,
+      // });
 
-    if (error) {
-      alert(JSON.stringify(error));
-    } else {
-      router.push("/dashboard");
+      if (error) {
+        alert(JSON.stringify(error));
+      } else {
+        router.push("/dashboard");
+      }
+      console.log(error, data);
+    } catch (error) {
+      console.log("error", error);
+      alert(error.error_description || error);
     }
-    console.log(error, data);
   };
   return (
     <>
-    <Home/>
+      <Home />
       <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
         <div className="relative w-96 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
           {/* <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" /> */}
@@ -45,11 +61,11 @@ const SignIn = () => {
               <Image src="/twitter.png" layout="fixed" width={60} height={60} />
             </i>
             <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
-              <Image src="/google.png" width={25} height={25}/>
+              <Image src="/google.png" width={25} height={25} />
               <span className="mx-2">Sign in with Google</span>
             </button>
             <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
-              <Image src="/apple.png" width={20} height={20}/>
+              <Image src="/apple.png" width={20} height={20} />
               <span className="mx-2">Sign in with Apple</span>
             </button>
           </div>

@@ -23,7 +23,7 @@ moment.locale("en", {
   },
 });
 
-export const Post = ({ tweet}) => {
+export const Post = ({ tweet }) => {
   return (
     <>
       <div className="flex cursor-pointer border-b border-gray-600 p-3">
@@ -46,10 +46,10 @@ export const Post = ({ tweet}) => {
                 {tweet.profiles.name}
               </h4>
               <span className="text-sm  sm:text-md text-gray-500">
-                @{tweet.profiles.username} 
+                @{tweet.profiles.username}
               </span>
               <span className="text-sm sm:text-md text-gray-500 hover:underline">
-              {moment(tweet.created_at).fromNow(true)}
+                {moment(tweet.created_at).fromNow(true)}
               </span>
             </div>
             {/* dot icon */}
