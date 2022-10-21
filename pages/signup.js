@@ -14,15 +14,16 @@ import Home from "../components/Home";
 
 const SignUp = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
-
-    const { error } = await supabase.auth.signUp({
+    const { error, data } = await supabase.auth.signUp({
       name: name,
       username: username,
       email: email,
@@ -68,6 +69,8 @@ const SignUp = () => {
                 placeholder="Enter your Name "
                 id="name"
                 value={name}
+                required
+                maxLength={20}
                 onChange={(e) => setName(e.target.value)}
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
@@ -79,6 +82,8 @@ const SignUp = () => {
                 placeholder="username"
                 id="username"
                 value={username}
+                required
+                maxLength={20}
                 onChange={(e) => setUserName(e.target.value)}
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
@@ -90,6 +95,8 @@ const SignUp = () => {
                 placeholder="Phone,email, or username"
                 id="email"
                 value={email}
+                required
+                maxLength={20}
                 onChange={(e) => setEmail(e.target.value)}
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
@@ -101,11 +108,14 @@ const SignUp = () => {
                 type="password"
                 id="password"
                 value={password}
+                required
+                minLength={6}
+                maxLength={20}
                 onChange={(e) => setPassword(e.target.value)}
               />
 
               <button className="flex items-center w-72 h-10 bg-white outline-none justify-center font-sans rounded-full text-lg font-bold my-3 bg-sky-400 text-white hover:bg-sky-500">
-                Sign Up
+                {loading ? "Loading ..." : " Sign Up "}
               </button>
             </form>
           </div>
