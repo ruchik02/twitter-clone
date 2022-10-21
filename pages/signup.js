@@ -14,15 +14,16 @@ import Home from "../components/Home";
 
 const SignUp = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
-
-    const { error } = await supabase.auth.signUp({
+    const { error, data } = await supabase.auth.signUp({
       name: name,
       username: username,
       email: email,
@@ -48,48 +49,73 @@ const SignUp = () => {
             <i className="fab fa-twitter text-sky-500 text-2xl ">
               <Image src="/twitter.png" layout="fixed" width={60} height={60} />
             </i>
+            {/* <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
+              <Image src="/google.png" width={25} height={25}></Image>
+              <span className="mx-2">Sign up with Google</span>
+            </button>
+            <button className="flex items-center w-72 h-10 bg-white outline-none font-bold border border-solid border-2 border-zinc-300 justify-center font-serif rounded-full font-sans ">
+              <Image src="/apple.png" width={20} height={20}></Image>
+              <span className="mx-2">Sign up with Apple</span>
+            </button> */}
           </div>
-
-          <div className="w-72 flex-col justify-evenly">
+          {/* <h5>Or</h5> */}
+          <div className="w-72 h-96 flex-col justify-evenly">
             <form onSubmit={handleSubmit}>
+              <label htmlFor="Name" className="text-gray-400 font-sans">
+                Name
+              </label>
               <Input
                 type="text"
                 placeholder="Enter your Name "
-                label="Name"
                 id="name"
                 value={name}
+                required
+                maxLength={20}
                 onChange={(e) => setName(e.target.value)}
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
+              <label htmlFor="username" className="text-gray-400 font-sans">
+                UserName
+              </label>
               <Input
                 type="text"
                 placeholder="username"
-                label="UserName"
                 id="username"
                 value={username}
+                required
+                maxLength={20}
                 onChange={(e) => setUserName(e.target.value)}
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
+              <label htmlFor="email" className="text-gray-400 font-sans">
+                Email
+              </label>
               <Input
                 type="text"
                 placeholder="Phone,email, or username"
-                label="Email"
                 id="email"
                 value={email}
+                required
+                maxLength={20}
                 onChange={(e) => setEmail(e.target.value)}
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
+              <label htmlFor="password" className="text-gray-400">
+                Password
+              </label>
               <Input
                 className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1"
                 type="password"
-                label="Password"
                 id="password"
                 value={password}
+                required
+                minLength={6}
+                maxLength={20}
                 onChange={(e) => setPassword(e.target.value)}
               />
 
               <button className="flex items-center w-72 h-10 bg-white outline-none justify-center font-sans rounded-full text-lg font-bold my-3 bg-sky-400 text-white hover:bg-sky-500">
-                Sign Up
+                {loading ? "Loading ..." : " Sign Up "}
               </button>
             </form>
           </div>

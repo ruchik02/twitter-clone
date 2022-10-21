@@ -15,12 +15,13 @@ import Home from "../components/Home";
 // {open,onClose}
 const SignIn = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignIn = async (e) => {
+    setLoading(true);
     e.preventDefault();
-
     const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: password,
@@ -67,6 +68,8 @@ const SignIn = () => {
                 id="email"
                 label="Email"
                 value={email}
+                required
+                maxLength={30}
                 onChange={(e) => setEmail(e.target.value)}
                 // className="relative w-72 h-12 outline-none border border-2 border-solid border-zinc-300 pl-3 rounded-md text-sm focus:border focus:border-2 focus:border-sky-500 my-1 font-sans "
               />
@@ -79,11 +82,14 @@ const SignIn = () => {
                 id="password"
                 label="Password"
                 value={password}
+                required
+                minLength={6}
+                maxLength={20}
                 onChange={(e) => setPassword(e.target.value)}
               />
 
               <button className="flex items-center w-72 h-10 bg-white outline-none justify-center font-sans rounded-full text-lg font-bold my-3 bg-sky-400 text-white hover:bg-sky-500">
-                Sign in with Email
+                {loading ? "Loading....." : "Sign in with Email"}
               </button>
             </form>
             <button className="flex items-center w-72 h-10 bg-white outline-none font-bold justify-center font-sans text-lg rounded-full my-3 b-2 border-sky-400 border-solid border text-sky-500">

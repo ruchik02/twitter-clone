@@ -10,7 +10,6 @@ import Head from "next/head";
 const Dashboard = () => {
   const router = useRouter();
   const [user, setUser] = useState();
-
   const handleLogOut = async (e) => {
     e.preventDefault();
 
