@@ -35,7 +35,6 @@ const SignUp = () => {
     } else {
       router.push("/signin");
     }
-    console.log("dashboard", data, error);
   };
 
   return (
