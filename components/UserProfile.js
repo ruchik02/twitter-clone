@@ -1,4 +1,3 @@
-import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 
 const UserProfile = () => {
@@ -21,10 +20,6 @@ const UserProfile = () => {
           <h4 className="text-xl text-gray-600">@RuchikaRuchikas</h4>
         </div>
         <button
-        //   onClick={() => {
-        //     Cookies.remove("token");
-        //     router.push("/");
-        //   }}
           className="py-2 px-4 text-white font-bold rounded-3xl bg-red-700 hover:bg-opacity-90"
         >
           Logout
