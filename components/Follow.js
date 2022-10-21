@@ -9,8 +9,8 @@ const Follow = ({ follow }) => {
             height={50}
             layout="fixed"
             src={follow.img}
-            alt=""
-          />
+            alt="not found"
+          ></Image>
           <div >
 
             <h6 className="text-white text-md font-bold">{follow.name}</h6>

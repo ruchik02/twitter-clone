@@ -65,7 +65,7 @@ const Feed = () => {
         </div>
       </div>
       <InputFeed reload={reload} setReload={setReload} />
-      {tweets.map((tweet) => (
+      {tweets?.map((tweet) => (
         <Post key={tweet.id} tweet={tweet} />
       ))}
     </div>
