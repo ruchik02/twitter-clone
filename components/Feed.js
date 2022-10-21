@@ -4,23 +4,37 @@ import { Post } from "./Post";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/supabaseClient";
-const Feed = () => {
+const Feed = ({session}) => {
   const router = useRouter();
+  const[loading,setLoading]=useState(true);
   const [tweets, setTweets] = useState([]);
   const user = supabase.auth.getUser();
   const[reload,setReload]=useState(false);
   console.log("Feed section", user);
   useEffect(() => {
     (async () => {
+      try{
+        setLoading(true)
+        const { user } = session
+      
       const { data: tweets, error } = await supabase
         .from("tweets")
         .select("*, profiles:profile_id (name,username)")
+        .eq('id',user.id)
         .order("created_at", { ascending: false });
-
+        if (error) {
+          throw error
+        }
+      
       setTweets(tweets);
       console.log(tweets, error);
+      }catch(error){
+        console.warn(error.message)
+      }finally{
+        setLoading(false)
+      }
     })();
-  }, [reload]);
+  }, [reload,session]);
   const logout = async () => {
     await supabase.auth.signOut();
     router.push("/");
