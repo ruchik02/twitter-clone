@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import { useRouter } from "next/router";
 
-import { supabase } from "../utils/SupabaseClient";
+import { supabase } from "../utils/supabaseClient";
 
 import Image from "next/image";
 
