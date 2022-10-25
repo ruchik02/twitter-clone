@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 
 import { useRouter } from "next/router";
 
@@ -11,7 +11,6 @@ import Link from "next/link";
 import Input from "../components/Input";
 
 import Home from "../components/Home";
-
 const SignUp = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -23,13 +22,13 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    const { error, data } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       name: name,
       username: username,
       email: email,
       password: password,
     });
-
+    await supabase.auth.setSession(data.session.refresh_token);
     if (error) {
       alert(JSON.stringify(error));
       setLoading(false);

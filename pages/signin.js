@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/supabaseClient";
 import Image from "next/image";
@@ -6,19 +6,34 @@ import Link from "next/link";
 import Input from "../components/Input";
 import Home from "../components/Home";
 
+import {
+  useSession,
+  useSupabaseClient,
+  useUser,
+} from "@supabase/auth-helpers-react";
+
 const SignIn = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const session = useSession();
+  const supabase = useSupabaseClient();
+  const user = useUser();
+  useEffect(() => {
+    if (session) {
+      router.push("/dashboard");
+    }
+  }, [session, user]);
   const handleSignIn = async (e) => {
     setLoading(true);
     e.preventDefault();
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, profile, session, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: password,
+      refreshToken: session?.refresh_token,
     });
+    await supabase.auth.setSession(data.session.refresh_token);
 
     if (error) {
       alert(JSON.stringify(error));

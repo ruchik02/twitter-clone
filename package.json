@@ -8,6 +8,9 @@
   "dependencies": {
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
+    "@supabase/auth-helpers-nextjs": "^0.4.1",
+    "@supabase/auth-helpers-react": "^0.3.0",
+    "@supabase/supabase-auth-helpers": "^1.4.2",
     "@supabase/supabase-js": "2.0.0-rc.10",
     "heroicons": "^2.0.12",
     "js-cookie": "^3.0.1",

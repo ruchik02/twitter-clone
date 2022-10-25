@@ -4,45 +4,19 @@ import { supabase } from "../utils/supabaseClient";
 import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import { Widget } from "../components/Widget";
+import {
+  useSession,
+  useSupabaseClient,
+  useUser,
+} from "@supabase/auth-helpers-react";
 // import Heading from "../components/Head";
 import Head from "next/head";
-
 const Dashboard = () => {
   const router = useRouter();
-  const [user, setUser] = useState();
-  const handleLogOut = async (e) => {
-    e.preventDefault();
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      alert(JSON.stringify(error));
-    } else {
-      router.push("/");
-    }
-  };
-
-  useEffect(() => {
-    const getProfile = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      // console.log(profile);
-      if (user) {
-        setUser(user);
-      } else {
-        router.push("/signin");
-      }
-    };
-
-    getProfile();
-  }, []);
-
-  if (!user) {
-    return null;
-  }
-
+  const session = useSession();
+  const user = useUser();
   return (
     <>
-      {/* max-w-7xl */}
       <div>
         <Head>
           <link
