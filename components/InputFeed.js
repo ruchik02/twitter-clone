@@ -4,8 +4,7 @@ import { HiEmojiHappy, HiLocationMarker, HiPhotograph } from "react-icons/hi";
 import Img from "../public/user.jpg";
 import Image from "next/image";
 import { supabase } from "../utils/supabaseClient";
-import { useEffect, useState } from "react";
-// import { v4 as uuidv4 } from 'uuid';
+import {  useState } from "react";
 export const InputFeed = ({ reload, setReload }) => {
   const user = supabase.auth.getUser();
   // const[user,setUser]=useState(null);
@@ -19,27 +18,22 @@ export const InputFeed = ({ reload, setReload }) => {
   const [tweet, setTweet] = useState("");
   const [loading, setLoading] = useState(false);
   const sendTweet = async (e) => {
-    // if (loading) return;
-    // setLoading(true);
+    setLoading(true);
     e.preventDefault();
-    const { data, error } = await supabase.from("tweets").insert({
+    const { data, error } = await supabase.from("tweet").insert({
       body: tweet,
       profile_id: user.id,
-
-      // profile_id:'fcf1856f-953c-440e-9496-a34e4ecb2450',
-      // id:uuidv4()
     });
+
     console.log("text", data, error);
     setReload((prev) => !prev);
-    setTweet("");
+    setTweet(" ");
+    setLoading(false);
   };
   return (
     <div className="flex border-gray-200 p-3  space-x-3">
       <Image
-        // src={
-        //   user ? Img :"https://links.papareact.com/gll"
-        // }
-        src="/user.jpg"
+        src={Img}
         alt="image not found "
         height={50}
         width={50}
@@ -68,11 +62,10 @@ export const InputFeed = ({ reload, setReload }) => {
 
           <button
             className="bg-blue-400 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50"
-            // disabled
             onClick={sendTweet}
-            // disabled={!input.trim()}
+            disabled={!tweet.length > 0 || tweet.trim() === ""}
           >
-            Tweet
+            {loading ? "Loading..." : " Tweet "}
           </button>
         </div>
       </div>
