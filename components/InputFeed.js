@@ -6,7 +6,7 @@ import Image from "next/image";
 import { supabase } from "../utils/supabaseClient";
 import { useEffect, useState } from "react";
 // import { v4 as uuidv4 } from 'uuid';
-export const InputFeed = ({reload,setReload}) => {
+export const InputFeed = ({ reload, setReload }) => {
   const user = supabase.auth.getUser();
   // const[user,setUser]=useState(null);
   // const getUser =async()=>{
@@ -17,7 +17,7 @@ export const InputFeed = ({reload,setReload}) => {
   // },[])
   console.log("input Feed ", user);
   const [tweet, setTweet] = useState("");
-  const[loading,setLoading]=useState(false);
+  const [loading, setLoading] = useState(false);
   const sendTweet = async (e) => {
     // if (loading) return;
     // setLoading(true);
@@ -30,8 +30,8 @@ export const InputFeed = ({reload,setReload}) => {
       // id:uuidv4()
     });
     console.log("text", data, error);
-    setReload((prev)=>!prev)
-    setTweet('');
+    setReload((prev) => !prev);
+    setTweet("");
   };
   return (
     <div className="flex border-gray-200 p-3  space-x-3">

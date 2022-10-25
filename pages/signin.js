@@ -29,6 +29,7 @@ const SignIn = () => {
 
     if (error) {
       alert(JSON.stringify(error));
+      setLoading(false);
     } else {
       router.push("/dashboard");
     }
@@ -63,7 +64,7 @@ const SignIn = () => {
                 Email
               </label> */}
               <Input
-                type="text"
+                type="email"
                 // placeholder="Phone,email, or username"
                 id="email"
                 label="Email"
