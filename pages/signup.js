@@ -42,13 +42,19 @@ const SignUp = () => {
     <>
       <Home />
       <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
-        <div className="relative w-96 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
+        <div className="relative w-96 h-3/4 bg-white rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
           <div className="flex items-center  flex-col justify-evenly ">
             <h1 className="text-xl font-bold text-center text-black font-sans">
               Create your account
             </h1>
             <i className="fab fa-twitter text-sky-500 text-2xl ">
-              <Image src="/twitter.png" layout="fixed" width={60} height={60} />
+              <Image
+                src="/twitter.png"
+                layout="fixed"
+                width={60}
+                height={60}
+                alt="image not found"
+              />
             </i>
           </div>
           <div className="w-72 flex-col justify-evenly">
@@ -60,7 +66,6 @@ const SignUp = () => {
                 type="text"
                 placeholder="Enter your Name "
                 id="name"
-                label="Name"
                 value={name}
                 required
                 maxLength={20}
@@ -74,7 +79,6 @@ const SignUp = () => {
                 type="text"
                 placeholder="username"
                 id="username"
-                label="Username"
                 value={username}
                 required
                 maxLength={20}
@@ -89,7 +93,6 @@ const SignUp = () => {
                 placeholder="Phone,email, or username"
                 id="email"
                 value={email}
-                label="Email"
                 required
                 maxLength={20}
                 onChange={(e) => setEmail(e.target.value)}
@@ -103,7 +106,7 @@ const SignUp = () => {
                 type="password"
                 id="password"
                 value={password}
-                label="Password"
+                placeholder="Enter Your Password"
                 required
                 minLength={6}
                 maxLength={20}

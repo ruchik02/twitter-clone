@@ -1,12 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-// import { useState } from "react";
-// import {SigninModal} from '../pages/signin';
-
+import FooterWidget from "./FooterWidget";
 const Home = () => {
-  // const [showSignupModal, setShowSignupModal] = useState(false);
-  // const [showSigninModal, setShowSigninModal] = useState(false);
   return (
     <>
       <Head>
@@ -24,10 +20,9 @@ const Home = () => {
         <div className="image h-full bg-center bg-no-repeat bg-cover relative bg-fixed">
           <Image
             src="/landing.png"
-            // width={1302}
-            // height={955}
             layout="fill"
             className="object-cover"
+            alt="landing image"
           />
           <svg
             viewBox="0 0 24 24"
@@ -62,7 +57,6 @@ const Home = () => {
                 Sign up
               </a>
             </Link>
-            {/* onClick={() => setShowSigninModal(true)} */}
             <Link href="/signin">
               <a className="flex items-center justify-center text-2xl font-bold rounded-full no-underline b-2 border-sky-400 border-solid border text-sky-500 w-96 h-14 font-bold btn">
                 Log in
@@ -70,72 +64,8 @@ const Home = () => {
             </Link>
           </div>
         </div>
-
-        <div className="footer">
-          <nav className="flex flex-row flex-wrap justify-center items-center text-sm">
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              About
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              help center
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              terms of service
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              privacy policy
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              cookie policy
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              ads info
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              blog
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              status
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              careers
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              brand resources
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              advertising
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              marketing
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              twitter for business
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              developers
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize">
-              directory
-            </a>
-            <a href="#" className="no-underline text-stone-600 capitalize ">
-              settings
-            </a>
-            <div className="no-underline text-stone-600 capitalize text-lg">
-              &copy; 2021 Twitter, Inc.
-            </div>
-          </nav>
-        </div>
+        <FooterWidget />
       </div>
-      {/* <SignupModal
-        open={showSignupModal}
-        onClose={() => setShowSignupModal(false)}
-      /> */}
-
-      {/* <SigninModal
-        open={showSigninModal}
-        onClose={() => setShowSigninModal(false)}
-      /> */}
     </>
   );
 };

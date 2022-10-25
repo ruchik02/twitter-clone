@@ -12,9 +12,7 @@ const Dashboard = () => {
   const [user, setUser] = useState();
   const handleLogOut = async (e) => {
     e.preventDefault();
-
     const { error } = await supabase.auth.signOut();
-
     if (error) {
       alert(JSON.stringify(error));
     } else {

@@ -16,6 +16,10 @@ const Signout = () => {
       router.push("/");
     }
   };
+  const handleCancel=async(e)=>{
+    e.preventDefault();
+     router.push('/dashboard');
+  }
   return (
     <>
       <div className="flex flex-col align-middle items-center bg-gray-800 absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
@@ -28,7 +32,8 @@ const Signout = () => {
                 width={40}
                 className="fixed"
                 height={40}
-              ></Image>
+                alt="image not found"
+                />
             </i>
           </div>
           <div className="flex flex-col items-start px-4">
@@ -48,7 +53,9 @@ const Signout = () => {
             >
               Log out?
             </button>
-            <button className="flex items-center tracking-normal leading-3 w-72 h-10 hover:bg-slate-600 bg-transparent outline-none font-bold justify-center font-sans text-lg rounded-full my-3 b-2 border-white border-solid border text-white">
+            <button className="flex items-center tracking-normal leading-3 w-72 h-10 hover:bg-slate-600 bg-transparent outline-none font-bold justify-center font-sans text-lg rounded-full my-3 b-2 border-white border-solid border text-white"
+            onClick={handleCancel}
+            >
               Cancel ?
             </button>
           </div>
