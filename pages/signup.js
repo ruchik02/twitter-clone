@@ -1,4 +1,4 @@
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 
 import { useRouter } from "next/router";
 
@@ -18,6 +18,14 @@ const SignUp = () => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // const UserSignIN = async (e) => {
+  //   e.preventDefault();
+  //   //router.push("/check");
+  //   router.push({
+  //     pathname: "/check",
+  //     query: { name: name, username: username },
+  //   });
+  // };
 
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -27,12 +35,22 @@ const SignUp = () => {
       username: username,
       email: email,
       password: password,
+      options: {
+        data: {
+          username: username,
+          name: name,
+        },
+      },
     });
     await supabase.auth.setSession(data.session.refresh_token);
     if (error) {
       alert(JSON.stringify(error));
       setLoading(false);
     } else {
+      setName(
+        data.user?.user_metadata?.username,
+        data.user?.user_metadata?.name
+      );
       router.push("/signin");
     }
   };

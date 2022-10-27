@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/supabaseClient";
 import Image from "next/image";
@@ -14,6 +14,7 @@ import {
 
 const SignIn = () => {
   const router = useRouter();
+ // const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,26 +23,45 @@ const SignIn = () => {
   const user = useUser();
   useEffect(() => {
     if (session) {
+      setName(user?.user_metadata?.first_name);
+      setEmail(user?.email);
       router.push("/dashboard");
     }
   }, [session, user]);
+
+  // useEffect(() => {
+  //   if (session) {
+  //     router.push("/dashboard");
+  //   }
+  // }, [session, user]);
+
   const handleSignIn = async (e) => {
     setLoading(true);
     e.preventDefault();
-    const { data, profile, session, error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: password,
-      refreshToken: session?.refresh_token,
-    });
+    const { data, profile, session, error } =
+      await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
+        refreshToken: session?.refresh_token,
+      });
     await supabase.auth.setSession(data.session.refresh_token);
 
+    console.log(
+      "user",
+      data.user?.user_metadata?.username,
+      data.user?.user_metadata?.name
+    );
     if (error) {
       alert(JSON.stringify(error));
       setLoading(false);
     } else {
+      // setName(
+      //   data.user?.user_metadata?.name,
+      //   data.user?.user_metadata?.username
+      // );
       router.push("/dashboard");
     }
-    console.log(error, data);
+    console.log("error and data", error, data);
   };
   return (
     <>

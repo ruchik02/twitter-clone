@@ -4,17 +4,10 @@ import { supabase } from "../utils/supabaseClient";
 import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import { Widget } from "../components/Widget";
-import {
-  useSession,
-  useSupabaseClient,
-  useUser,
-} from "@supabase/auth-helpers-react";
-// import Heading from "../components/Head";
 import Head from "next/head";
-const Dashboard = () => {
-  const router = useRouter();
-  const session = useSession();
-  const user = useUser();
+const Dashboard = ({name,username}) => {
+
+  
   return (
     <>
       <div>
@@ -28,7 +21,10 @@ const Dashboard = () => {
         {/* <Heading/> */}
         <main className="flex min-h-screen mx-auto">
           {/* sidebar  component */}
-          <Sidebar />
+          <Sidebar 
+          name={name}
+          username={username}
+           />
           {/* Feed component  */}
           <Feed />
           {/* widget component */}
