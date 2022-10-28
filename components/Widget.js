@@ -12,8 +12,7 @@ export const Widget = () => {
     {
       id: "2",
       article: "Politics . Trending",
-      source:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum ac mauris quis gravida ",
+      source: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       id: "3",

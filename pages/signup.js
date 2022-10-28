@@ -18,14 +18,7 @@ const SignUp = () => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const UserSignIN = async (e) => {
-  //   e.preventDefault();
-  //   //router.push("/check");
-  //   router.push({
-  //     pathname: "/check",
-  //     query: { name: name, username: username },
-  //   });
-  // };
+  
 
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -42,7 +35,7 @@ const SignUp = () => {
         },
       },
     });
-    await supabase.auth.setSession(data.session.refresh_token);
+   // await supabase.auth.setSession(data.session.refresh_token);
     if (error) {
       alert(JSON.stringify(error));
       setLoading(false);
@@ -51,7 +44,14 @@ const SignUp = () => {
         data.user?.user_metadata?.username,
         data.user?.user_metadata?.name
       );
-      router.push("/signin");
+      router.push({
+        pathname:'/signin',
+        query:{
+          name:name,
+          email:email,
+          username:username,
+        }
+      });
     }
   };
 

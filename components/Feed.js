@@ -23,7 +23,7 @@ const Feed = () => {
           throw error;
         }
         setTweets(tweets);
-        console.log(tweets, error);
+        console.log("tweets", tweets, error);
       } catch (error) {
         console.warn(error.message);
       } finally {

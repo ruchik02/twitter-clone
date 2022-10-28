@@ -1,5 +1,5 @@
 // import { ChevronDownIcon } from "@heroicons/react/solid";
-import {BsChevronDown} from 'react-icons/bi'
+import { BsChevronDown } from "react-icons/bi";
 const Select = ({ label, value, onChange, options }) => {
   return (
     <div className="w-full block border border-gray-200 rounded-lg py-2 px-4 relative">
@@ -21,7 +21,7 @@ const Select = ({ label, value, onChange, options }) => {
 
       <div className="absolute right-5 top-0 flex items-center h-full pointer-events-none">
         {/* <ChevronDownIcon className="w-8 h-8 text-gray-500" /> */}
-        <BsChevronDown className="w-8 h-8 text-gray-500"/>
+        <BsChevronDown className="w-8 h-8 text-gray-500" />
       </div>
     </div>
   );

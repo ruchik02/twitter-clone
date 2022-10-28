@@ -5,9 +5,8 @@ import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import { Widget } from "../components/Widget";
 import Head from "next/head";
-const Dashboard = ({name,username}) => {
-
-  
+const Dashboard = () => {
+  const { query } = useRouter();
   return (
     <>
       <div>
@@ -21,12 +20,9 @@ const Dashboard = ({name,username}) => {
         {/* <Heading/> */}
         <main className="flex min-h-screen mx-auto">
           {/* sidebar  component */}
-          <Sidebar 
-          name={name}
-          username={username}
-           />
+          <Sidebar name={query.name} username={query.username} />
           {/* Feed component  */}
-          <Feed />
+          <Feed name={query.name} username={query.username} />
           {/* widget component */}
           <Widget />
         </main>

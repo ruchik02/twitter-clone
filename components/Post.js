@@ -23,7 +23,7 @@ moment.locale("en", {
   },
 });
 
-export const Post = ({ tweet }) => {
+export const Post = ({ tweet, name, username }) => {
   return (
     <>
       <div className="flex cursor-pointer border-b border-gray-600 p-3">
@@ -43,10 +43,11 @@ export const Post = ({ tweet }) => {
             <div className=" flex items-center space-x-1 whitespace-nowrap">
               {/* user info */}
               <h4 className="font-bold text-lg sm:text-md capitalize hover:underline">
-                {tweet.profiles.name}
+                {/* {tweet.profiles.name} */}
+                {name}
               </h4>
               <span className="text-sm  sm:text-md text-gray-500">
-                @{tweet.profiles.username}
+                {/* @{tweet.profiles.username} */}@{username}
               </span>
               <span className="text-sm sm:text-md text-gray-500 hover:underline">
                 {moment(tweet.created_at).fromNow(true)}
@@ -55,6 +56,7 @@ export const Post = ({ tweet }) => {
             {/* dot icon */}
             <BiDotsHorizontal className="h-9 w-9 hoverEffect p-2 rounded-full  hover:text-sky-500" />
           </div>
+
           {/* text */}
           <p className="text-white text-lg sm:text-md mb-3 mx-3 capitalize">
             {tweet.body}

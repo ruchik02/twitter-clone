@@ -14,20 +14,20 @@ import {
 
 const SignIn = () => {
   const router = useRouter();
- // const [name, setName] = useState("");
+  //const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const session = useSession();
+  //const session = useSession();
   const supabase = useSupabaseClient();
-  const user = useUser();
-  useEffect(() => {
-    if (session) {
-      setName(user?.user_metadata?.first_name);
-      setEmail(user?.email);
-      router.push("/dashboard");
-    }
-  }, [session, user]);
+  //const user = useUser();
+  // useEffect(() => {
+  //   if (session) {
+  //     setName(user?.user_metadata?.name);
+  //     setEmail(user?.username);
+  //     router.push("/dashboard");
+  //   }
+  // }, [session, user]);
 
   // useEffect(() => {
   //   if (session) {
@@ -44,10 +44,10 @@ const SignIn = () => {
         password: password,
         refreshToken: session?.refresh_token,
       });
-    await supabase.auth.setSession(data.session.refresh_token);
-
+    // await supabase.auth.setSession(data.session.refresh_token);
     console.log(
       "user",
+      data,
       data.user?.user_metadata?.username,
       data.user?.user_metadata?.name
     );
@@ -55,11 +55,13 @@ const SignIn = () => {
       alert(JSON.stringify(error));
       setLoading(false);
     } else {
-      // setName(
-      //   data.user?.user_metadata?.name,
-      //   data.user?.user_metadata?.username
-      // );
-      router.push("/dashboard");
+      router.push({
+        pathname: "/dashboard",
+        query: {
+          name: data.user?.user_metadata?.name,
+          username: data.user?.user_metadata?.username,
+        },
+      });
     }
     console.log("error and data", error, data);
   };

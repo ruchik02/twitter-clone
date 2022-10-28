@@ -1,40 +1,27 @@
 import React from "react";
 import Image from "next/image";
-import { supabase } from "../utils/supabaseClient";
 import { useRouter } from "next/router";
+import Dashboard from "./dashboard";
 
-const Signout = () => {
+const Delete = ({ name, username }) => {
   const router = useRouter();
-  const handleLogOut = async (e) => {
+  const handleDelete = async (e) => {
     e.preventDefault();
-
-    const { data, error } = await supabase.auth.signOut();
-
-    if (error) {
-      alert(JSON.stringify(error));
-    } else {
-      router.push("/");
-    }
-    // console.log(
-    //   "data",
-    //   data.user?.user_metadata?.name,
-    //   data.user?.user_metadata?.username
-    // );
   };
   const handleCancel = async (e) => {
     e.preventDefault();
     router.push({
       pathname: "/dashboard",
-      // query:{
-      //   name: data.user?.user_metadata?.name,
-      //   username: data.user?.user_metadata?.username,
-
-      // }
+      query: {
+        name: name,
+        username: username,
+      },
     });
   };
   return (
     <>
-      <div className="flex flex-col align-middle items-center bg-gray-800 absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap backdrop-blur-sm">
+      <Dashboard name={name} username={username} />
+      <div className="flex flex-col align-middle items-center absolute top-0 left-0 right-0 bottom-0 justify-center flex-wrap">
         <div className="relative w-80 h-96 bg-black rounded-3xl flex flex-col items-center justify-center font-bold shadow shadow-black">
           <div className="flex items-center w-72 h-24 flex-col justify-evenly ">
             <i className="fab fa-twitter text-sky-500 text-2xl ">
@@ -50,20 +37,21 @@ const Signout = () => {
           </div>
           <div className="flex flex-col items-start px-4">
             <h3 className="text-white text-2xl py-1 px-5 font-bold font-sans">
-              Log out of Twitter ?
+              Delete Tweet ?
             </h3>
 
             <span className=" px-5 text-gray-600 text-md  font-sans py-1 font-normal ">
-              You can always log back in at any time. If you just want to switch
-              accounts, you can do that by adding an existing account.
+              This can't be undone and it will be removed from your profile, the
+              timeline of any accounts that follow you , and from Twitter search
+              results.
             </span>
           </div>
           <div className="w-72 h-44 flex-col items-center justify-center py-4">
             <button
-              className="flex items-center w-72 h-10 bg-white hover:opacity-40 hover:transition-all hover:duration-200  font-bold justify-center font-sans text-lg rounded-full my-3 b-2 outline-none text-black "
-              onClick={handleLogOut}
+              className="flex items-center w-72 h-10 bg-red-600 hover:opacity-40 hover:transition-all hover:duration-200  font-bold justify-center font-sans text-lg rounded-full my-3 b-2 outline-none text-black "
+              onClick={handleDelete}
             >
-              Log out?
+              Delete
             </button>
             <button
               className="flex items-center tracking-normal leading-3 w-72 h-10 hover:bg-slate-600 bg-transparent outline-none font-bold justify-center font-sans text-lg rounded-full my-3 b-2 border-white border-solid border text-white"
@@ -78,4 +66,4 @@ const Signout = () => {
   );
 };
 
-export default Signout;
+export default Delete;

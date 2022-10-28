@@ -8,9 +8,23 @@ import { HiOutlineUser, HiDotsCircleHorizontal } from "react-icons/hi";
 import Link from "next/link";
 import { useState } from "react";
 
-const Sidebar = ({name,username}) => {
+const Sidebar = ({ name, username }) => {
   const [show, setShow] = useState(true);
-   
+  //  const ProfileHandle=async(e)=>{
+  //   e.preventDefault();
+  //   if (error) {
+  //     alert(JSON.stringify(error));
+  //  }
+  //  else {
+  //   router.push({
+  //     pathname: "/profile",
+  //     query: {
+  //       email: email,
+  //       name: data.user?.user_metadata?.name,
+  //       username: data.user?.user_metadata?.username,
+  //     },
+  //   });
+  // }
   return (
     // xl:ml-24
     <div className="hidden sm:flex flex-col p-2 xl:items-start fixed h-full xl:ml-24 ">
@@ -19,16 +33,36 @@ const Sidebar = ({name,username}) => {
         <Image width="40" height="40" src="/twitter.png"></Image>
       </div>
       {/* Menu */}
-     
+
       <div className="mt-4 mb-2.5 xl:items-start">
         <SidebarItem text="Home" Icon={AiFillHome} active />
         <SidebarItem text="Explore" Icon={BsHash} />
         <>
           <SidebarItem text="Notifications" Icon={IoMdNotificationsOutline} />
-          <SidebarItem text="Messages" Icon={BiEnvelope} />
+          <SidebarItem
+            text="Messages"
+            href={{
+              pathname: "/message",
+              query: {
+                name: name,
+                username: username,
+              },
+            }}
+            Icon={BiEnvelope}
+          />
           <SidebarItem text="Bookmarks" Icon={BsBookmark} />
           <SidebarItem text="Lists" Icon={IoMdListBox} />
-          <SidebarItem text="Profile" href="/profile" Icon={HiOutlineUser} />
+          <SidebarItem
+            text="Profile"
+            href={{
+              pathname: "/profile",
+              query: {
+                name: name,
+                username: username,
+              },
+            }}
+            Icon={HiOutlineUser}
+          />
           <SidebarItem text="More" Icon={HiDotsCircleHorizontal} />
         </>
       </div>
@@ -51,7 +85,7 @@ const Sidebar = ({name,username}) => {
             className="leading-5 hidden xl:inline mx-2"
             onClick={() => setShow(!show)}
           >
-          {/* name */}
+            {/* name */}
             <h4 className="font-bold">{name}</h4>
             {/* username */}
             <p className="text-gray-500">@{username}</p>

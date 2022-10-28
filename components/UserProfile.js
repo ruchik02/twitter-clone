@@ -1,7 +1,5 @@
-import { useRouter } from "next/router";
 import { AiOutlineArrowLeft, AiOutlineSchedule } from "react-icons/ai";
-const UserProfile = () => {
-  const router = useRouter();
+const UserProfile = ({ name, username }) => {
   return (
     <div className="xl:ml-96 border-gray-600 border-l border-r xl:min-w-xl sm:ml-20 flex-grow max-w-xl">
       <div className="bg-black backdrop-blur-md h-14 flex sticky top-0 z-50 border-b border-gray-600">
@@ -35,8 +33,8 @@ const UserProfile = () => {
       </header>
       <div className="flex items-center px-2 py-2">
         <div className="flex-1">
-          <h1 className="text-xl font-bold text-white">Ruchika Sharma</h1>
-          <h4 className="text-lg text-gray-600">@RuchikaRuchikas</h4>
+          <h1 className="text-xl font-bold text-white px-1">{name}</h1>
+          <h4 className="text-lg text-gray-600 px-1">@{username}</h4>
         </div>
         {/* <button
           className="py-2 px-4 text-white font-bold rounded-3xl bg-red-700 hover:bg-opacity-90"
