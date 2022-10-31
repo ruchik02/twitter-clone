@@ -2,9 +2,16 @@ import React from "react";
 import Image from "next/image";
 import { supabase } from "../utils/supabaseClient";
 import { useRouter } from "next/router";
-
+import {
+  useSession,
+  useSupabaseClient,
+  useUser,
+} from "@supabase/auth-helpers-react";
 const Signout = () => {
   const router = useRouter();
+  const session = useSession();
+  const supabase = useSupabaseClient();
+  const user = useUser();
   const handleLogOut = async (e) => {
     e.preventDefault();
 
@@ -25,11 +32,10 @@ const Signout = () => {
     e.preventDefault();
     router.push({
       pathname: "/dashboard",
-      // query:{
-      //   name: data.user?.user_metadata?.name,
-      //   username: data.user?.user_metadata?.username,
-
-      // }
+      query: {
+        name: user?.user_metadata?.name,
+        username: user?.user_metadata?.username,
+      },
     });
   };
   return (

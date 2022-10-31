@@ -17,7 +17,7 @@ const Feed = () => {
         setLoading(true);
         const { data: tweets, error } = await supabase
           .from("tweet")
-          .select("*, profiles:profile_id (name,username)")
+          .select("*,users(id)")
           .order("created_at", { ascending: false });
         if (error) {
           throw error;

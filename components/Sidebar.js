@@ -20,8 +20,8 @@ const Sidebar = ({ name, username }) => {
   //     pathname: "/profile",
   //     query: {
   //       email: email,
-  //       name: data.user?.user_metadata?.name,
-  //       username: data.user?.user_metadata?.username,
+  //       name: user?.user_metadata?.name,
+  //       username: user?.user_metadata?.username,
   //     },
   //   });
   // }
@@ -35,7 +35,15 @@ const Sidebar = ({ name, username }) => {
       {/* Menu */}
 
       <div className="mt-4 mb-2.5 xl:items-start">
-        <SidebarItem text="Home" Icon={AiFillHome} active />
+        <SidebarItem text="Home"
+        href={{
+              pathname: "/dashboard",
+              query: {
+                name: name,
+                username: username,
+              },
+            }}
+         Icon={AiFillHome} active />
         <SidebarItem text="Explore" Icon={BsHash} />
         <>
           <SidebarItem text="Notifications" Icon={IoMdNotificationsOutline} />

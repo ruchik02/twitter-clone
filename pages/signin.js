@@ -14,26 +14,38 @@ import {
 
 const SignIn = () => {
   const router = useRouter();
-  //const [name, setName] = useState("");
+  const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //const session = useSession();
+  const session = useSession();
   const supabase = useSupabaseClient();
-  //const user = useUser();
-  // useEffect(() => {
-  //   if (session) {
-  //     setName(user?.user_metadata?.name);
-  //     setEmail(user?.username);
-  //     router.push("/dashboard");
-  //   }
-  // }, [session, user]);
+  const user = useUser();
+  useEffect(() => {
+    if (session) {
+      setName(user?.user_metadata?.name);
+      setEmail(user?.username);
+      router.push({
+        pathname: "/dashboard",
+        query: {
+          name: user?.user_metadata?.name,
+          username: user?.user_metadata?.username,
+        },
+      });
+    }
+  }, [session, user]);
 
-  // useEffect(() => {
-  //   if (session) {
-  //     router.push("/dashboard");
-  //   }
-  // }, [session, user]);
+  useEffect(() => {
+    if (session) {
+      router.push({
+        pathname: "/dashboard",
+        query: {
+          name: user?.user_metadata?.name,
+          username: user?.user_metadata?.username,
+        },
+      });
+    }
+  }, [session, user]);
 
   const handleSignIn = async (e) => {
     setLoading(true);
@@ -44,7 +56,7 @@ const SignIn = () => {
         password: password,
         refreshToken: session?.refresh_token,
       });
-    // await supabase.auth.setSession(data.session.refresh_token);
+   //  await supabase.auth.setSession(data.session.refresh_token);
     console.log(
       "user",
       data,
