@@ -44,10 +44,12 @@ export const Post = ({ tweet, name, username }) => {
               {/* user info */}
               <h4 className="font-bold text-lg sm:text-md capitalize hover:underline">
                 {/* {tweet.profiles.name} */}
-                {name}
+                {/* {name} */}
+                Ruchika Sharma
               </h4>
               <span className="text-sm  sm:text-md text-gray-500">
-                {/* @{tweet.profiles.username} */}@{username}
+                {/* @{tweet.profiles.username}@{username} */}
+                @RuchikaRuchikas
               </span>
               <span className="text-sm sm:text-md text-gray-500 hover:underline">
                 {moment(tweet.created_at).fromNow(true)}

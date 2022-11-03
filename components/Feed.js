@@ -17,7 +17,7 @@ const Feed = () => {
         setLoading(true);
         const { data: tweets, error } = await supabase
           .from("tweet")
-          .select("*,users(id)")
+          .select("*,profiles:profile_id (name,username)")
           .order("created_at", { ascending: false });
         if (error) {
           throw error;
@@ -31,10 +31,10 @@ const Feed = () => {
       }
     })();
   }, [reload]);
-  const logout = async () => {
-    await supabase.auth.signOut();
-    router.push("/");
-  };
+  // const logout = async () => {
+  //   await supabase.auth.signOut();
+  //   router.push("/");
+  // };
   return (
     <div className="text-white xl:ml-96 border-gray-600 border-l border-r xl:min-w-xl sm:ml-20 flex-grow max-w-xl">
       <div className=" flex sticky top-0 px-2 py-3 justify-between z-50 border-b border-gray-600">
