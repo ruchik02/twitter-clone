@@ -5,8 +5,10 @@ import Img from "../public/user.jpg";
 import Image from "next/image";
 import { supabase } from "../utils/supabaseClient";
 import {  useState } from "react";
+
 export const InputFeed = ({ reload, setReload }) => {
   const user = supabase.auth.getUser();
+
   // const[user,setUser]=useState(null);
   // const getUser =async()=>{
   //   setUser(user.data.user);

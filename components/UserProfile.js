@@ -2,9 +2,8 @@ import { useState } from "react";
 import { AiOutlineArrowLeft, AiOutlineSchedule } from "react-icons/ai";
 import Image from "next/image";
 import { useRouter } from "next/router";
-const UserProfile = ({ name, username }) => {
-  const router=useRouter();
-  const [edit, setEdit] = useState(false);
+const UserProfile = ({ name, username, location, website, bio, birthday }) => {
+  const router = useRouter();
   const editProfile = (e) => {
     e.preventDefault();
     router.push({
@@ -13,7 +12,6 @@ const UserProfile = ({ name, username }) => {
         name: name,
         username: username,
       },
-
     });
   };
   return (
@@ -62,18 +60,29 @@ const UserProfile = ({ name, username }) => {
         </div>
       </div>
       <div className="px-2 py-2">
-        <div className="flex items-center ml-2">
-          <AiOutlineSchedule className="text-white text-xl" />
-          <span className="text-gray-600 px-1">Joined</span>
-          <span className="text-gray-600 px-1">September 2022</span>
-        </div>
-      </div>
-      <div className="px-2 py-2">
         <div className="flex items-center text-gray-600 ml-2">
           <span className="text-white">11</span>
           <span className="px-1">Following</span>
           <span className="text-white px-3">20</span>
           <span className="px-1">Followers</span>
+        </div>
+      </div>
+      <div className="px-2 py-2">
+        <div className="flex items-center ml-2">
+          <AiOutlineSchedule className="text-white text-xl" />
+          <span className="text-gray-600 px-1">Joined</span>
+          <span className="text-gray-600 px-1">{birthday}</span>
+        </div>
+      </div>
+      <div className="px-2 py-2">
+        <div className="flex items-center text-gray-600 ml-2">
+          <span className="text-white">{location}</span>
+          <span className="text-white px-3">{website}</span>
+        </div>
+      </div>
+      <div className="px-2 py-2">
+        <div className="flex items-center text-gray-600 ml-2">
+          <span className="text-white">{bio}</span>
         </div>
       </div>
     </div>

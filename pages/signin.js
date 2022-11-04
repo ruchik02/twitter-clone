@@ -56,7 +56,7 @@ const SignIn = () => {
         password: password,
         refreshToken: session?.refresh_token,
       });
-   //  await supabase.auth.setSession(data.session.refresh_token);
+    await supabase.auth.setSession(data.session.refresh_token);
     console.log(
       "user",
       data,

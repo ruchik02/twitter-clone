@@ -3,7 +3,11 @@ import { BiComment, BiDotsHorizontal, BiHeart } from "react-icons/bi";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { BsBoxArrowUp, BsTriangle } from "react-icons/bs";
 import moment from "moment";
-
+// import {
+//   useSession,
+//   useSupabaseClient,
+//   useUser,
+// } from "@supabase/auth-helpers-react";
 moment.locale("en", {
   relativeTime: {
     future: "in %s",
@@ -23,13 +27,17 @@ moment.locale("en", {
   },
 });
 
+// import { useSession } from "next-auth/react";
+
 export const Post = ({ tweet, name, username }) => {
+  // const { data: session } = useSession();
   return (
     <>
       <div className="flex cursor-pointer border-b border-gray-600 p-3">
         {/* user image */}
         <Image
           // src={post.userImg}
+          // src={session?.user?.image}
           src="/user.jpg"
           layout="fixed"
           height={50}
@@ -44,11 +52,12 @@ export const Post = ({ tweet, name, username }) => {
               {/* user info */}
               <h4 className="font-bold text-lg sm:text-md capitalize hover:underline">
                 {/* {tweet.profiles.name} */}
-                {/* {name} */}
+                {/* {session?.user?.name} */}
                 Ruchika Sharma
               </h4>
               <span className="text-sm  sm:text-md text-gray-500">
-                {/* @{tweet.profiles.username}@{username} */}
+                {/* @{tweet.profiles.username} */}
+                {/* @{username} */}
                 @RuchikaRuchikas
               </span>
               <span className="text-sm sm:text-md text-gray-500 hover:underline">

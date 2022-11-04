@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import dashboard from "../pages/dashboard";
 import FooterWidget from "./FooterWidget";
-const Home = () => {
+// import { useSession } from "next-auth/react";
+export default function Hom({}) {
+  // const { data: session } = useSession();
+  // if (!session) {
   return (
     <>
       <Head>
@@ -68,6 +72,7 @@ const Home = () => {
       </div>
     </>
   );
-};
-
-export default Home;
+  // } else {
+  //   return <dashboard />;
+  // }
+}

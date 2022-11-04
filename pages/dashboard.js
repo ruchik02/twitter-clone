@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Feed from "../components/Feed";
 import { Widget } from "../components/Widget";
 import Head from "next/head";
+
 const Dashboard = () => {
   const { query } = useRouter();
   return (
@@ -24,6 +25,7 @@ const Dashboard = () => {
           {/* Feed component  */}
           <Feed name={query.name} username={query.username} />
           {/* widget component */}
+         
           <Widget />
         </main>
       </div>
